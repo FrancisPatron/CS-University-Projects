@@ -1,0 +1,1060 @@
+#include "msp430.h"                     ; #define controlled include file
+        NAME    main                    ; module name
+        PUBLIC  main                    ; make the main label vissible
+                                        ; outside this module
+        ORG     0FFFEh
+        DC16    init                    ; set reset vector to 'init' label
+
+        ORG     01C00h                  ;start of ram
+
+;0-9 digits     0     1     2     3     4     5     6     7     8     9
+digitH  db      0xFC, 0x60, 0xdb, 0xf1, 0x67, 0xB7, 0xBF, 0xE0, 0xFF, 0xE7
+digitL  db      0x28, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        Align 1
+
+;letters        R=0   S=1   G=2   U=3   O=4   T=5   N=6,  I=7   A=8   B=9   C=10  D=11  E=12  F=13
+letterH db      0xCF, 0xB7, 0xBD, 0x7C, 0xFC, 0x80, 0x6C, 0x90, 0xEF, 0xF1, 0x9c, 0xF0, 0x9F, 0x8F
+letterL db      0x02, 0x00, 0x00, 0x00, 0x00, 0x50, 0x82, 0x50, 0x00, 0x50, 0x00, 0x50, 0x00, 0x00
+
+;CABANU
+cabanuH db      0x9c, 0xEF, 0xF1, 0xEF, 0x6C, 0x7C
+cabanuL db      0x00, 0x00, 0x50, 0x00, 0x82, 0x00
+;FRBASE
+frbaseH db      0x8F, 0xCF, 0xF1, 0xEF, 0xB7, 0x9F
+frbaseL db      0x00, 0x02, 0x50, 0x00, 0x00, 0x00
+;TOBASE
+tobaseH db      0x80, 0xFC, 0xF1, 0xEF, 0xB7, 0x9F
+tobaseL db      0x50, 0x00, 0x50, 0x00, 0x00, 0x00
+;BINSIG
+binsigH  db     0xF1, 0x90, 0x6C, 0xB7, 0x90, 0xBD
+binsigL  db     0x50, 0x50, 0x82, 0x00, 0x50, 0x00
+;BINUNS
+binunsH db      0xF1, 0x90, 0x6C, 0x7C, 0x6C, 0xB7
+binunsL db      0x50, 0x50, 0x82, 0x00, 0x82, 0x00
+;OCTUNS
+octunsH db      0xFC, 0x9c, 0x80, 0x7C, 0x6C, 0xB7
+octunsL db      0x00, 0x00, 0x50, 0x00, 0x82, 0x00
+;OCTSIG
+octsigH db      0xFC, 0x9c, 0x80, 0xB7, 0x90, 0xBD
+octsigL db      0x00, 0x00, 0x50, 0x00, 0x50, 0x00
+;DECUNS
+decunsH db      0xF0, 0x9F, 0x9c, 0x7C, 0x6C, 0xB7
+decunsL db      0x50, 0x00, 0x00, 0x00, 0x82, 0x00
+;DECSIG
+decsigH db      0xF0, 0x9F, 0x9c, 0xB7, 0x90, 0xBD
+decsigL db      0x50, 0x00, 0x00, 0x00, 0x50, 0x00
+
+;LCD addresses
+segmentsH       dw  0x0A29, 0x0A25, 0x0A23, 0x0A32, 0x0A2E, 0x0A27
+segmentsL       dw  0x0A2A, 0x0A26, 0x0A24, 0x0A33, 0x0A2F, 0x0A28
+
+inputDigits     db      0, 0, 0, 0, 0, 0, 0
+
+;               + and 1 signs
+signH   db      0x03, 0x03
+signL   db      0x50, 0x00
+
+;this array will hold the limits for each input options of Cabanu
+limitsLeft      db      0, 0, 0, 0, 0x07, 0x03, 0x06, 0x03
+limitsRight     db      0, 0, 0, 0, 0x07, 0x07, 0x03, 0x01
+
+        RSEG    CSTACK                  ; pre-declaration of segment
+        RSEG    CODE                    ; place program in 'CODE' segment
+
+init:   MOV     #SFE(CSTACK), SP        ; set up stack
+
+settup:
+        mov.w    #WDTPW+WDTHOLD,&WDTCTL  ; Stop watchdog timer
+        bic.w   #LOCKLPM5, &PM5CTL0      ; DIsbale GPIO power-on default
+
+;       lcd settup
+        mov.w    #0xffff, &LCDCPCTL0     ; enable segments
+        mov.w    #0xfc3f, &LCDCPCTL1     ; enable segments
+        mov.w    #0x0fff, &LCDCPCTL2     ; enable segments
+
+        mov.w    #0x041e, &LCDCCTL0
+        mov.w    #0x0208,&LCDCVCTL       ; VLCD generated interally, V2-V4 gen interlan, V5 to ground, set VLCD to 2.60v, enabled charge pump and select reference
+        mov.w    #0x8000,&LCDCCPCTL      ; clock synch enabled
+        mov.w    #2,&LCDCMEMCTL          ; clear LCD memory
+        bis.w    #1, &LCDCCTL0           ; Turn on LCD
+
+;       ports settup
+        bic.b   #0xFF, &P1SEL0          ; Set PxSel0 and PxSel1 to digital I/O
+        bic.b   #0xFF, &P1SEL1          ; Digital I/O is the default
+        mov.b   #0xF9, &P1DIR           ; Set P1.1 and P1.2 for input
+        mov.b   #0x06, &P1REN           ; Activate P1.1 and P1.2 programable
+        bis.b   #0x06, &P1OUT           ; Set resistors for P1.1 and P1.2 as pull down
+        bic.b   #0x01, &P1OUT           ; Clear P1.0 and P9.7 output latch to
+
+main:   NOP                             ; main program
+        jmp     programStart
+        jmp $
+        NOP
+
+programStart:
+        mov.b   #0, R12 ;start at state 0
+        mov.b   #1, R9  ;hold the factor
+        mov.b   #0, R10 ;hold the number inputed
+        mov.b   #0, R15 ;this will hold the sign of the inputrd number 0 = (+) and 1 = (-)
+        jmp     stateSelector
+
+stateSelector:
+        cmp     #0,R12
+        jeq     cabanu
+        cmp     #1,R12
+        jeq     frbase
+        cmp     #2,R12
+        jeq     binsig
+        cmp     #3,R12
+        jeq     binuns
+        cmp     #4,R12
+        jeq     octuns
+        cmp     #5,R12
+        jeq     octsig
+        cmp     #6,R12
+        jeq     decuns
+        cmp     #7,R12
+        jeq     decsig
+
+selectOption:
+        cmp     #2, R12
+        jeq     bisigAction
+        cmp     #3,R12
+        jeq     binunsAction
+        cmp     #4,R12
+        jeq     octunsAction
+        cmp     #5,R12
+        jeq     octsigAction
+        cmp     #6,R12
+        jeq     decunsAction
+        cmp     #7,R12
+        jeq     decsigAction
+
+inputListener:
+        mov.b  &P1IN,R4
+        call   #delay
+        and.b  #00000110B,R4
+        cmp.b  #4,R4                    ;Left button pressed
+        jeq    nextOption
+        cmp.b  #2,R4                    ;Right button is pressed
+        jeq    selectOption
+        jmp    inputListener
+
+cabanu:
+        mov.w   #cabanuH,R5
+        mov.w   #cabanuL,R6
+        call    #printWord
+        jmp     inputListener
+
+frbase:
+        mov.w   #frbaseH,R5
+        mov.w   #frbaseL,R6
+        call    #printWord
+        jmp     inputListener
+
+nextOption:
+        cmp     #7, R12
+        jeq     resetState
+        inc     R12
+        jmp     stateSelector
+
+resetState:
+        mov     #2, R12
+        jmp     stateSelector
+
+
+binsig:
+        mov.w   #binsigH,R5
+        mov.w   #binsigL,R6
+        call    #printWord
+        jmp     inputListener
+
+binuns:
+        mov.w   #binunsH,R5
+        mov.w   #binunsL,R6
+        call    #printWord
+        jmp     inputListener
+
+octuns:
+        mov.w   #octunsH,R5
+        mov.w   #octunsL,R6
+        call    #printWord
+        jmp     inputListener
+
+octsig:
+        mov.w   #octsigH,R5
+        mov.w   #octsigL,R6
+        call    #printWord
+        jmp     inputListener
+
+decuns:
+        mov.w   #decunsH,R5
+        mov.w   #decunsL,R6
+        call    #printWord
+        jmp     inputListener
+
+decsig:
+        mov.w   #decsigH,R5
+        mov.w   #decsigL,R6
+        call    #printWord
+        jmp     inputListener
+
+;these will take care of the users selection
+bisigAction:
+        mov.b   #0, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w    #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #binarySelector
+        ;call    #signSelect
+        jmp     toBaseStart
+
+binunsAction:
+        mov.b   #0, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #binarySelector
+        jmp     toBaseStart
+
+octunsAction:
+        mov.b   #4, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #octalSelector
+        call    #getInputedNumber
+        jmp     toBaseStart
+
+octsigAction:
+        mov.b   #4, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #octalSelector
+        call    #getInputedNumber
+        call    #signSelect
+        call    #getInputedNumber
+        call    #getInputedSign
+        jmp     toBaseStart
+
+decunsAction:
+        mov.b   #4, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #decimalSelector
+        call    #getInputedNumber
+        jmp     toBaseStart
+
+decsigAction:
+        mov.b   #4, R4  ;start at the first spot
+        mov.b   #0, R5  ;start with zero
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #printDigit
+        call    #decimalSelector
+        call    #signSelect
+        call    #getInputedNumber
+        call    #getInputedSign
+        jmp     toBaseStart
+
+
+
+
+
+;Esta parte es para escojer a la base que se quiere cambiar
+toBaseStart:
+        mov     #0, R13         ;this will hold the "to base" state
+        jmp     toBaseSelector
+
+toBaseSelector:
+        cmp     #0,R13
+        jeq     toBase
+        cmp     #1,R13
+        jeq     toBinsig
+        cmp     #2,R13
+        jeq     toBinuns
+        cmp     #3,R13
+        jeq     toOctuns
+        cmp     #4,R13
+        jeq     toOctsig
+        cmp     #5,R13
+        jeq     toDecuns
+        cmp     #6,R13
+        jeq     toDecsig
+
+toBaseListener:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     next
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     acceptOption
+        jmp     toBaseListener
+
+next:
+        cmp     #6, R13
+        jeq     resetToState
+        inc     R13
+        jmp     toBaseSelector
+
+resetToState:
+        mov     #1, R13
+        jmp     toBaseSelector
+
+acceptOption:
+        cmp     #1,R13
+        jeq     extractB
+        cmp     #2,R13
+        jeq     extractBuns
+        cmp     #3,R13
+        jeq     extractOuns
+        cmp     #4,R13
+        jeq     extractO
+        cmp     #5,R13
+        jeq     extractDuns
+        cmp     #6,R13
+        jeq     extractD
+
+toBase:
+        mov.w   #tobaseH,R5
+        mov.w   #tobaseL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+toBinsig:
+        mov.w   #binsigH,R5
+        mov.w   #binsigL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+
+toBinuns:
+        mov.w   #binunsH,R5
+        mov.w   #binunsL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+toOctuns:
+        mov.w   #octunsH,R5
+        mov.w   #octunsL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+toOctsig:
+        mov.w   #octsigH,R5
+        mov.w   #octsigL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+toDecuns:
+        mov.w   #decunsH,R5
+        mov.w   #decunsL,R6
+        call    #printWord
+        jmp     toBaseListener
+
+toDecsig:
+        mov.w   #decsigH,R5
+        mov.w   #decsigL,R6
+        call    #printWord
+        jmp     toBaseListener
+;;------------------------------------------------------------;;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero binario CON signo. EL output de binarios 
+;utilizan subrutimas similares pero binario con signo utiliza una extra para 
+;poder imprimir el signo.
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021
+extractB:
+        push.b  R10
+        mov.b   #5,R4
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+
+displayB:
+        clrc
+        clrn
+        clrz
+        cmp     #0,R10
+        jz      toFinishListener
+        rra     R10
+        clrz
+        cmp     #1,SR
+        jeq     displayOneb
+
+displayZerob:
+        mov.b   #0,R5
+        call    #printDigit
+        dec     R4
+        cmp     #0,R4
+        jz      resultSign
+        jmp     displayB
+
+displayOneb:
+        mov.b   #1,R5
+        call    #printDigit
+        dec     R4
+        cmp     #0,R4
+        jz      resultSign
+        jmp     displayB
+
+resultSign:
+        call    #drawresultSignB
+        jmp     toFinishListener
+;---------Binary unsigned------;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero binarios SIN signo. EL output de binarios 
+;utilizan subrutimas similares pero binario con signo utiliza una extra para 
+;poder imprimir el signo.
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021            
+extractBuns:
+        push.b  R10
+        mov.b   #5,R4
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+
+displayBuns:
+        clrc
+        clrn
+        clrz
+        cmp     #0,R10
+        jz      toFinishListener
+        rra     R10
+        clrz
+        cmp     #1,SR
+        jeq     displayOne
+
+displayZero:
+        mov.b   #0,R5
+        call    #printDigit
+        dec     R4
+        jmp     displayBuns
+
+displayOne:
+        mov.b   #1,R5
+        call    #printDigit
+        dec     R4
+        jmp     displayBuns
+
+;-------Octal Signed-------;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero octal CON signo. 
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021
+extractO:
+        PUSH.B  R10
+        mov.b   #0,R4   ;i # of decimal digits
+        mov     #000001000B,R11 ;Y 8
+        mov.b   R10,R15
+        and     #0x01F, R10
+        and     #0x20, R15
+        call    #decimalsignedResult
+;-------Octal unsigned-----;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero octal SIN signo. 
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021
+extractOuns:
+        PUSH.B  R10
+        mov.b   #0,R4   ;i # of decimal digits
+        mov     #000001000B,R11 ;Y 8
+        ;X se encuentra en registro R10 en base binaria
+        call    #decimalResult
+        
+;---------Decimal Signed----;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero octal CON signo. 
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021
+extractD:
+        PUSH.B  R10
+        mov.b   #0,R4   ;i # of decimal digits
+        mov     #00001010B,R11 ;Y 10
+        mov.b   R10,R15
+        ;Mask to check sign of number
+        and     #0x01F, R10
+        and     #0x20, R15
+        ;X se encuentra en registro R10 en base binaria
+
+decimalsignedResult:
+        call    #div    ;X/Y
+        cmp     #0,R12
+        jeq     signedresultNumber
+        mov.b   R12,inputDigits(R4)
+        mov.b   R6,R10
+        inc     R4
+        jmp     decimalsignedResult
+
+signedresultNumber:
+        POP     R10
+        mov.b   R4,R13
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        call    #drawresultSignD
+signedresultLoop:
+        mov.b   #5,R4
+        dec     R13
+        cmp     #0xFFFF,R13
+        jeq     toFinishListener
+        sub     R13,R4
+        mov.b   inputDigits(R13),R5
+        call    #printDigit
+        jmp     signedresultLoop
+
+;-----Decimal Unisigned-----;
+;Objetivo: Transferir bits del numero de input a mostrarse en el LCD como 
+;un numero octal SIN signo. 
+;Precondiciones: En R10 el numero de input ya convertido a binario, 
+;R15 conteniendo el flag de negativo
+;Postcondiciones: R4 contener la posicion del LCD y R5 el digito a imprimirse para asi llamar a las 
+;diferentes subrutinas de print. 
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 8/nov/2021
+extractDuns:
+        PUSH.B  R10
+        mov.b   #0,R4   ;i # of decimal digits
+        mov     #000001010B,R11 ;Y 10
+        ;X se encuentra en registro R10 en base binaria
+decimalResult:
+        call    #div
+        cmp     #0,R12
+        jeq     resultNumber
+        mov.b   R12,inputDigits(R4)
+        mov.b   R6,R10
+        inc     R4
+        jmp     decimalResult
+
+resultNumber:
+        POP     R10
+        mov.b   R4,R13
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        
+resultLoop:
+        mov.b   #5,R4
+        dec     R13
+        cmp     #0xFFFF,R13
+        jeq     toFinishListener
+        sub     R13,R4
+        mov.b   inputDigits(R13),R5
+        call    #printDigit
+        jmp     resultLoop
+;Objetivo: Transfiere los digitos en binarios que se escogieron en la LCD
+;Precondiciones: R10 debe tener 0x00 y se debe llamar cada vez que se accepta un digito binario
+;Postcondiciones: El numero binario se guardara en R10
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 9/nov/2021
+toFinishListener:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     programEnd
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     programEnd
+        jmp     toFinishListener
+        
+programEnd:
+        call    #clearRegs
+        mov.w   #2,&LCDCMEMCTL
+        jmp     programStart
+
+;---------------------------------------------------------------;
+
+;Objetivo: En base a un registro (R15) se imprimira el bit de negativo o positivo en el LCD
+;Precondiciones: R15 con un (0) o (1) que determina que signo sera imprimido
+;Postcondiciones: El numero 0 (positivo) o el numero 1 (negativo) sera mostrado en el LCD en 
+;el byte mas significativo
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 9/nov/2021
+drawresultSignB:
+        mov.b   digitH(R15), &0x0A29
+        mov.b   digitL(R15), &0x0A2A
+        ret
+
+;Objetivo: En base a un registro (R15) se imprimiran los numeros en el LCD
+;Precondiciones: R15 con un (0) o (1) que determina que signo sera imprimido
+;Postcondiciones: El signo negativo(-) o el signo positivo(+) mostrado en el LCD
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 9/nov/2021
+drawresultSignD:
+        cmp     #0x020,R15
+        jz      negativeDecimal
+        mov.b   signH(R15), &0x0A32
+        mov.b   signL(R15), &0x0A33
+        ret
+
+negativeDecimal:
+        mov.b   #1,R15
+        mov.b   signH(R15), &0x0A32
+        mov.b   signL(R15), &0x0A33
+        ret
+
+;Objetivo: Se hara "togle del simbolo de - para que el usuario escoga el signo al haber escogido una opcion signed"
+;Precondiciones: Se llama al final despues de tener el numero con los 6 espacios del LCD display llenos
+;Postcondiciones: Se dibujara en el display el simbolo de negativo (si no es binario) y luego de guarda en la memoria
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 18/oct/2021
+signSelect:
+        mov     #0, R4
+        call    #drawSign
+        jmp     signInput
+
+signInput:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     toogleSign
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     acceptSign
+        jmp     signInput
+
+
+;Objetivo: Dibujara el signo positivo o negativo en la posicion 3 del display
+;Precondiciones: Si R4 es 1, dibujara negativo y si en 0 dibuja positivo
+;Postcondiciones: se dubujara en el LCD display el signo deseado en la posicion A3. El sign aceptado se guardara en R15
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 8/nov/2021
+drawSign:
+        mov.b   signH(R4), &0x0A32
+        mov.b   signL(R4), &0x0A33
+        ret
+
+toogleSign:
+        xor.b   #1, R4
+        call    #drawSign
+        jmp     signInput
+
+acceptSign:
+        mov.b   R4, R15
+        ret
+
+
+;Objetivo: Guarda en R10 el signo en el bit mas significativo
+;Precondiciones: Se llamara despues de haber llamado getInputedNumber y en R15 debe estar el resultado del signo
+;Postcondiciones: en el bit mas significativo del numero guardado en R10, se pondra un 1 o 0 dependiendo del signo escogido
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 9/nov/2021
+getInputedSign:
+        cmp     #1, R4
+        jeq     saveNeg
+        jmp     savePos
+
+saveNeg:
+        bis.b   #00100000B, R10
+        ret
+
+savePos:
+        bic.b   #00100000B, R10
+        ret
+
+;Objetivo: Itera por todos los espacios del LCD display y le permite escojer al usuario dondey cual digito escribir (0-1)
+;Precondiciones: Se llamara al usuario escoger un input de modo binario
+;Postcondiciones: Se dibujara en el display el numero deseado y se grabara en el arreglo de memoria definido
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 30/oct/2021
+binarySelector:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     flipBinary
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     nextPos
+        jmp     binarySelector
+
+flipBinary:
+        xor.b   #1, R5
+        call    #printDigit
+        jmp     binarySelector
+
+nextPos:
+        call    #getInputBinary
+        inc.b   R4
+        cmp     #6, R4
+        jeq     accept
+        mov.b   #0, R5
+        call    #printDigit
+        jmp     binarySelector
+
+;Objetivo: Itera por todos los espacios del LCD display y le permite escojer al usuario dondey cual digito escribir (0-9)
+;Precondiciones: Se llamara al usuario escoger un input de modo decimal
+;Postcondiciones: Se dibujara en el display el numero deseado y se grabara en el arreglo de memoria definido
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 30/oct/2021
+decimalSelector:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     incDecimal
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     nextDecimalPos
+        jmp     decimalSelector
+
+incDecimal:
+        cmp     #6, R4
+        jeq     accept
+
+        cmp.b   #4, R4
+        jeq     checkLeftLimit
+
+        cmp.b   #5, R4
+        jeq     checkRightLimit
+
+resetDecimal:
+        mov.b   #0, R5
+        call    #printDigit
+        jmp     decimalSelector
+
+nextDecimalPos:
+        call    #saveInputDigit
+        inc.b   R4
+        cmp     #6, R4
+        jeq     accept
+        mov.b   #0, R5
+        call    #printDigit
+        jmp     decimalSelector
+
+checkLeftLimit:
+        cmp.b   limitsLeft(R12), R5
+        jeq     resetDecimal
+        cmp     #9, R5
+        jeq     resetDecimal
+        inc     R5
+        call    #printDigit
+        jmp     decimalSelector
+
+checkRightLimit:
+        push.w  R4
+        dec     R4
+        cmp.b   limitsLeft(R12), inputDigits(R4)
+        pop     R4
+        jeq     leftDecimalIsAtLimit
+        cmp     #9, R5
+        jeq     resetDecimal
+        inc     R5
+        call    #printDigit
+        jmp     decimalSelector
+
+
+leftDecimalIsAtLimit:
+        cmp.b   limitsRight(R12), R5
+        jeq     resetDecimal
+        cmp     #9, R5
+        jeq     resetDecimal
+        inc     R5
+        call    #printDigit
+        jmp     decimalSelector
+
+saveInputDigit:
+        mov.b   R5, inputDigits(R4)
+        ret
+
+;Objetivo: Dibuja en la pantalla un digito en la localizacion definida, sin hacer clear (0-7)
+;Precondiciones: Se llamara al usuario escoger un input de modo octal
+;Postcondiciones: Se dibujara en el display el numero deseado y se grabara en el arreglo de memoria definido
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 30/oct/2021
+octalSelector:
+        mov.b   &P1IN,R11
+        call    #delay
+        and.b   #00000110B,R11
+        cmp.b   #4,R11                    ;Left button pressed
+        jeq     incOctal
+        cmp.b   #2,R11                    ;Right button is pressed
+        jeq     nextOctalPos
+        jmp     octalSelector
+
+incOctal:
+        cmp     #6, R4
+        jeq     accept
+
+        cmp.b   #4, R4
+        jeq     checkLeftLimit
+
+        cmp.b   #5, R4
+        jeq     checkRightLimit
+
+
+resetOctal:
+        mov.b   #0, R5
+        call    #printDigit
+        jmp     octalSelector
+
+nextOctalPos:
+        call    #saveInputDigit
+        inc.b   R4
+        cmp     #6, R4
+        jeq     accept
+        mov.b   #0, R5
+        call    #printDigit
+        jmp     octalSelector
+
+checkOctalLeftLimit:
+        cmp.b   limitsLeft(R12), R5
+        jeq     resetOctal
+        cmp     #7, R5  ;max digit is 7
+        jeq     resetOctal
+        inc     R5
+        call    #printDigit
+        jmp     octalSelector
+
+checkOctalRightLimit:
+        push.w  R4
+        dec     R4
+        cmp.b   limitsLeft(R12), inputDigits(R4)
+        pop     R4
+        jeq     leftIsAtLimit
+        cmp     #7, R5  ;max digit is 7
+        jeq     resetOctal
+        inc     R5
+        call    #printDigit
+        jmp     octalSelector
+
+
+leftIsAtLimit:
+        cmp.b   limitsRight(R12), R5
+        jeq     resetOctal
+        cmp     #7, R5  ;max digit is 7
+        jeq     resetOctal
+        inc     R5
+        call    #printDigit
+        jmp     octalSelector
+
+;Objetivo: Transfiere los digitos en binarios que se escogieron en la LCD
+;Precondiciones: R10 debe tener 0x00 y se debe llamar cada vez que se accepta un digito binario
+;Postcondiciones: El numero binario se guardara en R10
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 9/nov/2021
+getInputBinary:
+        cmp     #0, R5
+        jeq     saveLow
+        jmp     saveHigh
+
+saveHigh:
+        setc    ;this will be the next digit that will be added (1)
+        rlc     R10
+        ret
+
+saveLow:
+        clrc    ;this will be the next digit that will be added (0)
+        rlc     R10
+        ret
+
+;Objetivo: Dibuja en la pantalla una palabra definida en los arrays de arriba
+;Precondiciones: Recibe el array de low bytes en el registro R6 y el de high bytes en el registro R5
+;Postcondiciones: En la pantalla se dibujaN todos los high bytes y low bytes definidos en R5 y R6
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 18/oct/2021
+printWord:
+        push.w  R4
+        push.w  R7
+        push.w  R8
+        mov.b   #0,R4           ;start index
+        jmp     printWordIterate
+
+printWordIterate:
+        mov.w   segmentsH(R4),R7
+        mov.w   segmentsL(R4),R8
+        mov.b   @R5,0(R7)
+        mov.b   @R6,0(R8)
+
+        incd    R4              ;need to di +2 because lcd segemnts are words
+        inc     R5
+        inc     R6
+
+        cmp     #12,R4
+        jne     printWordIterate
+
+        pop     R4
+        pop     R7
+        pop     R8
+
+        ret
+
+;Objetivo: Dibuja en la pantalla un digito en la localizacion definida, sin hacer clear
+;Precondiciones:En R4 debe estar la posicion querida (0-5) y en R5 el digito (0-9)
+;Postcondiciones: Se dibujara en el display el digito escogido en la posicion escogida
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 18/oct/2021
+printDigit:
+        push.w  R6
+        push.w  R7
+
+        mov.w   #segmentsH, R6
+        mov.w   #segmentsL, R7
+        add.w   R4, R6
+        add.w   R4, R7
+        add.w   R4, R6
+        add.w   R4, R7
+
+        mov.w   @R6, R6
+        mov.w   @R7, R7
+
+        mov.b   digitH(R5), 0(R6)
+        mov.b   digitL(R5), 0(R7)
+
+        pop     R7
+        pop     R6
+
+        ret
+
+;Objetivo: Dibujar en el LCD display una letra en una posicion exacta
+;Precondiciones: En R4 debe estar la posicion y en R5 la letra
+;Postcondiciones: Se dibujara en el display la letra escogida en la posicion escogida
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 18/oct/2021
+printLetter:
+        push.w  R6
+        push.w  R7
+
+        mov.w   #segmentsH, R6
+        mov.w   #segmentsL, R7
+        add.w   R4, R6
+        add.w   R4, R7
+        add.w   R4, R6
+        add.w   R4, R7
+
+        mov.w   @R6, R6
+        mov.w   @R7, R7
+
+        mov.B   letterH(R5), 0(R6)
+        mov.B   letterL(R5), 0(R7)
+
+        pop     R7
+        pop     R6
+
+        ret
+
+;Objetivo: Realizar una division entre dos numeros y obtener el cociente y
+;residuo, mediante resta repetida.
+;Precondiciones: Registro R11 contiene divisor (Y)  y R10 contiene el dividendo (X)
+;Postcondiciones: Registro R6 contendra el cociente y R12 contendra el residuo
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 1/nov/2021
+div:    mov     #0,R6   ;quotient
+        mov     R10,R12
+rsubs:  sub     R11,R12
+        jn      negResult
+        cmp     #0,R12
+        jz      divEnd
+        inc     R6
+        jmp     rsubs
+negResult:
+        add     R11,R12
+        ret
+divEnd:
+        ret
+
+;Objetivo: Guardar en un registro el numero que el usuario escojio para luego ser procesado
+;Precondiciones: Tener los 6 digitos en el arreglo de memoria establecido anteriormente
+;Postcondiciones: En el registro R10 se encontrara el numero que escojio el usuario
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 8/nov/2021
+getInputedNumber:
+        push.w  R4
+        push.w  R5
+        push.w  R8
+        push.w  R9
+
+        mov.w   #1, R4  ;this is the factor
+        mov.w   #5, R5  ;this is the index
+        mov.w   #0, R10  ;this is the sum
+        mov.w   #0, R9
+        jmp     getInputedNumberLoop
+
+getInputedNumberLoop:
+        cmp     #3, R5
+        jeq     done
+        mov.w   R4, R8  ;R8 will be modified in the loop
+        call    #multiplyByFactor
+        add.w   R9, R10
+        mov.w   #0, R9  ;reset R9
+        dec     R5      ;get to the next digit
+        mov.w   R4, R8 ;this will now server to mult factor by 10
+        mov.w   #0, R4
+        call    #getNextFactor
+        jmp     getInputedNumberLoop
+
+multiplyByFactor:
+        cmp     #0, R8
+        jeq     accept
+        add.b   inputDigits(R5), R9
+        dec     R8
+        jmp     multiplyByFactor
+
+getNextFactor:
+        cmp     #0, R8
+        jeq     accept
+        add.b   #10, R4
+        dec     R8
+        jmp     getNextFactor
+
+done:
+        pop     R4
+        pop     R5
+        pop     R8
+        pop     R9
+
+        ret
+
+;Objetivo: Evitar debouncing effect al presionar el botton
+;Precondiciones: se debe llamar antes de guardar el valor del pin del boton a un registro
+;Postcondiciones: El programa solo registrara el boton 1 vez por click
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 22/oct/2021
+delay:
+        push.w  R10
+        mov     #0xFFFF, R10
+        jmp     delayLoop
+delayLoop:
+        dec     R10
+        jnz     delayLoop
+        pop     R10
+        ret
+
+;Objetivo: Limpiar los registros
+;Precondiciones: n/a
+;Postcondiciones: n/a
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 1/nov/2021
+clearRegs:
+        mov     #0,R4
+        mov     #0,R5
+        mov     #0,R6
+        mov     #0,R7
+        mov     #0,R8
+        mov     #0,R9
+        mov     #0,R10
+        mov     #0,R11
+        mov     #0,R12
+        mov     #0,R13
+        mov     #0,R14
+        mov     #0,R14
+        mov     #0,R15
+        ret
+
+accept:
+        ret
+
+        END

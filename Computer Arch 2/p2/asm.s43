@@ -1,0 +1,302 @@
+; Projecto CHRONO para curso CIIC 4082-96H
+
+; Integrantes: 
+;       -Francis Patron Fidalgo
+;       -Fernando Mendez Gonalez
+;       -Fabian Matos Gierbolini
+
+#include "msp430.h"                     ; #define controlled include file
+
+        NAME    main                    ; module name
+
+        PUBLIC  main                    ; make the main label vissible
+                                        ; outside this module 
+
+        ORG     0FFDAh                  ; vector for PORT1
+        DC16    PORT1_ISR               ; set vector for the routine
+
+        ORG     0FFE8h                  ; set vector for TIMER_A0
+        DC16    TIMER_A0_ISR            ; set vector for 'TIMER_A0_ISR'
+        
+
+        ORG     0FFFEh                  ; vector set for RESET
+        DC16    init                    ; set reset vector to 'init' label
+
+        ORG     01C00h                  ; start of ram
+
+;0-9 digits     0     1     2     3     4     5     6     7     8     9
+digitH  db      0xFC, 0x60, 0xdb, 0xf1, 0x67, 0xB7, 0xBF, 0xE0, 0xFF, 0xE7
+digitL  db      0x28, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        
+;LCD addresses
+segmentsH       dw  0x0A29, 0x0A25, 0x0A23, 0x0A32, 0x0A2E, 0x0A27
+segmentsL       dw  0x0A2A, 0x0A26, 0x0A24, 0x0A33, 0x0A2F, 0x0A28
+
+;add chronometer digits in array
+count  db      0, 0, 0, 0, 0, 0 ;has 2 extra zeros
+
+;when 1 = update lcd, 0 freeze lcd
+lcdFlag db      0, 0
+
+        RSEG    CSTACK                  ; pre-declaration of segment
+        RSEG    CODE                    ; place program in 'CODE' segment
+
+init:   MOV     #SFE(CSTACK), SP        ; set up stack
+
+main:
+        mov.w   #WDTPW+WDTHOLD,&WDTCTL  ; Stop watchdog timer
+        bic.w   #LOCKLPM5, &PM5CTL0     ; DIsbale GPIO power-on default
+
+        ;lcd settup
+        mov.w   #0xffff, &LCDCPCTL0     ; enable segments
+        mov.w   #0xfc3f, &LCDCPCTL1     ; enable segments
+        mov.w   #0xffff, &LCDCPCTL2     ; enable segments
+        mov.w   #0x041e, &LCDCCTL0
+        mov.w   #0x0208,&LCDCVCTL       ; VLCD generated interally, V2-V4 gen interlan, V5 to ground, 
+                                        ; set VLCD to 2.60v, enabled charge pump and select reference
+        mov.w   #0x8000,&LCDCCPCTL      ; clock synch enabled
+        mov.w   #2,&LCDCMEMCTL          ; clear LCD memory
+        bis.w   #1, &LCDCCTL0           ; Turn on LCD
+
+        ;ports settup
+        bic.b   #00000110b, &P1DIR      ; Port 1.1 for button input, all other as output
+	bis.b   #00000110b, &P1OUT	; P1.1 Resistor enabled as pullup
+        bis.b   #00000110b, &P1REN      ; resistor. Push is read as 0 and else 1
+        bis.b   #00000110b, &P1IES      ; Int generated on high to low transition
+        bis.b   #00000110b, &P1IE       ; Enable interrupt at P1.1
+
+        mov     #TASSEL_2+MC_1+ID_3, &TA0CTL  ;Set timer according to next table
+        nop
+        ; Uses SMCLK and up mode
+        ; TASSELx        MCx (mode control)                IDx (input divider)
+        ; 00 -> TACLK    00 -> Stop                        00 -> /1
+        ; 01 -> ACLK     01 -> Up mode (up to TACCR0)      01 -> /2
+        ; 10 -> SMCLK    10 -> Continuous (up to 0FFFFh)   02 -> /4
+        ; 11 -> INCLK    11 -> Up/down (top on TACCR0)     03 -> /8
+
+        ; period = cycles * divider / SMLCK
+        ; Assuming SMLCK = 1/100 MHz, divider = 8 and period = 0.25 seg
+        ; cycles = 62500 / 100 = 625
+        mov    #1250, &TA0CCR0           ;se genera la interrupcion del timer cuando llege a este valor
+        nop                             ;requerido
+
+        bic.b   #00000110b, &P1IFG      ; To erase a flag raised before
+               	                        ; activating the GIE. This help to
+                                        ; avoid responding to a push on button
+                                        ; previous to program start.
+
+        mov     #25, R10                ; this will be the debouncer
+        call    #updateLCD               ; print 00.00
+
+        nop                             ; required befor enabling interrupts
+        bis     #GIE+LPM0, SR           ; Enable interrupts and enter low power mode
+        nop                             ; Required after enabling interrupts
+
+        JMP $                           ; jump to current location '$'
+                                        ; (endless loop)
+        NOP
+        
+;===============================================================================
+; Subroutines
+;===============================================================================  
+
+;Objetivo: Anadir 1 al count cada vez que ocurre el interrupt del timer
+;Precondiciones:
+;Postcondiciones:
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 14/nov/2021
+addCounter:
+        cmp.b     #9, count(R6)         ; check if digit is 9
+        jge     addThenResetRight       ; if t, add one to left and reset all from itself to rightmost digit
+                                        ; then increase R6 to check the next number to the left
+                                        ; jmp to start again with next number
+        inc.b     count(R6)             ; if f, just add 1 to count(R6) and return
+        
+        ret
+
+addThenResetRight:
+        push.w  R6
+        call    #resetRight     ;reset all digits to the right of R6
+        pop     R6
+        inc     R6
+        jmp     addCounter 
+
+;Objetivo: Reset todos los digitos desde la pocicion R6 hasta el digito mas derecho
+;Precondiciones: R6 debe estar el indice en el cual se pondra un cero en el y todos los digitos a la derecha
+;Postcondiciones: Los digitos de count seran cero desde R6 hasta el ultimo digito
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 14/nov/2021
+resetRight: 
+        mov.b   #0, count(R6)
+        cmp     #0, R6
+        jeq     doneResetRight
+        dec     R6
+        jmp     resetRight
+doneResetRight:
+        ret
+        
+
+doneAddCounter:
+        mov     #0, R6  ;reset for next occurance
+        reti
+
+;Objetivo: dubuja En el lcd los cuatro digitos en el array de count
+;Precondiciones: Se debe llamar para actualizar los digitos en el display 
+;                y el lcd flag debe estar en 1
+;Postcondiciones: Se dibujara en el lcd display los cuatro digitos en el array: "count"
+;                 Se borra lo que habia anteriormente
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 14/nov/2021
+updateLCD: 
+        push.w  R4
+        push.w  R5
+        push.w  R6
+        
+        mov     #5, R4
+        mov     #0, R6
+        mov.b   count(R6), R5
+        
+        mov.w   #2,&LCDCMEMCTL 
+        
+        ;start drawing all 4 digits
+        call    #printDigit
+        
+        dec     R4
+        inc     R6
+        mov.b     count(R6), R5
+        call    #printDigit
+        
+        dec     R4
+        inc     R6
+        mov.b     count(R6), R5
+        call    #printDigit
+        
+        dec     R4
+        inc     R6
+        mov.b     count(R6), R5
+        call    #printDigit
+        
+        
+        
+        pop     R4
+        pop     R5 
+        pop     R6
+        
+        bis.b   #0x01, &0xA33      ;dibuja el punto del medio
+        
+        ret 
+        
+;Objetivo: Le anade al registro que contiene el debouncer
+;Precondiciones: se debe llabar en cada interrupcion del timer A0, en R10 esta el status del debouncer (0-25)
+;Postcondiciones: Se le suma 1 al contador del debouncer hasta llegar a 25 (pasaron 0.25 secs)
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 16/nov/2021
+updateDebouncer:
+        cmp     #26, R10
+        jge     noInc
+        inc     R10
+        ret
+        
+noInc:
+        ret
+        
+;Objetivo: Dibuja en la pantalla un digito en la localizacion definida, sin hacer clear
+;Precondiciones:En R4 debe estar la posicion querida (0-5) y en R5 el digito (0-9)
+;Postcondiciones: Se dibujara en el display el digito escogido en la posicion escogida
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 18/oct/2021
+printDigit:
+        push.w  R6
+        push.w  R7
+
+        mov.w   #segmentsH, R6
+        mov.w   #segmentsL, R7
+        add.w   R4, R6
+        add.w   R4, R7
+        add.w   R4, R6
+        add.w   R4, R7
+
+        mov.w   @R6, R6
+        mov.w   @R7, R7
+
+        mov.b   digitH(R5), 0(R6)
+        mov.b   digitL(R5), 0(R7)
+
+        pop     R7
+        pop     R6
+
+        ret
+        
+;===============================================================================
+; Interrupts Routines
+;===============================================================================    
+   
+;Objetivo: Le suma 1 al counter y le hace update al lcd display 
+;Precondiciones: Se debe llamar cada 1/100 segundo para sumar 1 al count, debe haber un 1 o 0 en el lcd flag
+;Postcondiciones:
+;Autor: Francis J. Patron Fidalgo
+;Fecha: 11/nov/2021
+TIMER_A0_ISR: 
+        call    #updateDebouncer        ; debouncer
+
+        ;Iterrupt que debe incrementar el counter de centecima de segundo (ocurre cada 1/100 secs)
+        mov     #0, R6  
+        call    #addCounter        
+
+        cmp     #1, lcdFlag   ; decide if we should update the lcd or freeze it
+        jeq     callUpdateLCD           
+
+        reti
+
+callUpdateLCD:
+        call    #updateLCD
+        reti
+
+;Objetivo: Determinar que boton se presiono y detener, continuar o reiniciar el timer. 
+;Si es s2 el timer hara un reset en y todos los valores del mismo volveran a 0.
+;Precondiciones: Setup de timers e interruptores ya activados. 
+;Postcondiciones: La ejecucion de s1 o s2. S1 comienza el timer, 
+;detiene el display si se presiona luego de comenzar
+;Autor: Fabian J. Matos Gierbolini
+;Fecha: 16/Nov./2021
+PORT1_ISR:
+        bic.b   #00000110b, &P1IFG	;Reset interrupt flag (bit 1 & 2)
+        nop
+        
+        cmp     #25, R10
+        jl     delay            ; reti early until timer get R10 to 25 (0.25 secs)
+
+        mov     #0, R10         ; start debouncer
+
+        mov.b   &P1IN, R4
+        and.b   #00000110b, R4
+        cmp.b   #00000100b, R4      
+        jeq     s1Press         ;left button pressed
+        jmp     s2Press         ;right button pressed
+
+        reti
+s2Press:
+        push.w  R6
+        mov.w   #0,R6
+        mov.w   #0,count(R6)         
+        incd    R6
+        mov.w   #0,count(R6)
+        incd    R6
+        mov.w   #0,count(R6)
+        pop     R6
+        bic     #CCIE, &TA0CCTL0
+        call    #updateLCD
+        mov.b   #0, lcdFlag
+        
+        mov     #25, R10        ;reset debouncer
+        
+        reti
+s1Press:      
+        xor.b     #1, lcdFlag
+        mov     #CCIE, &TA0CCTL0
+        reti
+        
+delay:
+        reti    ; no hace nada ahsta que R10 llege a 25 (se tarda 0.25s)
+        
+        END

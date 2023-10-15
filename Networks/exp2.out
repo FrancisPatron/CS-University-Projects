@@ -1,0 +1,1449 @@
+02:30:38 DLE_Exp2_Node2 Tx: message 1: {"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}
+02:30:38 DLE_Exp2_Node2 FSM: event type: 0
+02:30:38 DLE_Exp2_Node2 FSM: to send frame 0: {"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}
+02:30:38 PLE_Exp2_Node2 Tx: b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:38 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:38 DLE_Exp2_Node1 Rx: message 1: b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:38 DLE_Exp2_Node1 FSM: event type: 1
+02:30:38 DLE_Exp2_Node1 FSM: received frame 0: {"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}
+02:30:39 PLE_Exp2_Node1 Tx: b'\x01\x00'
+packet lost
+02:30:43 DLE_Exp2_Node2 FSM: event type: 3
+02:30:43 DLE_Exp2_Node2 FSM: to resend frame 0: {"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}
+02:30:44 PLE_Exp2_Node2 Tx: b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:44 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:44 DLE_Exp2_Node1 Rx: message 2: b'\x00\x00{"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}'
+02:30:44 DLE_Exp2_Node1 FSM: event type: 1
+02:30:44 DLE_Exp2_Node1 FSM: received frame 0: {"experiment_id": 2, "message_id": 0, "time": 1679722238041618761}
+02:30:44 DLE_Exp2_Node1 FSM: received frame 0 but expected 1
+02:30:44 PLE_Exp2_Node1 Tx: b'\x01\x00'
+02:30:44 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x00'
+02:30:44 DLE_Exp2_Node2 Rx: message 1: b'\x01\x00'
+02:30:44 DLE_Exp2_Node2 FSM: event type: 2
+02:30:44 DLE_Exp2_Node2 Tx: message 2: {"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}
+02:30:44 DLE_Exp2_Node2 FSM: event type: 0
+02:30:44 DLE_Exp2_Node2 FSM: to send frame 1: {"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}
+02:30:45 PLE_Exp2_Node2 Tx: b'\x00\x01{"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}'
+02:30:45 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x01{"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}'
+02:30:45 DLE_Exp2_Node1 Rx: message 3: b'\x00\x01{"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}'
+02:30:45 DLE_Exp2_Node1 FSM: event type: 1
+02:30:45 DLE_Exp2_Node1 FSM: received frame 1: {"experiment_id": 2, "message_id": 1, "time": 1679722238041657420}
+02:30:46 PLE_Exp2_Node1 Tx: b'\x01\x01'
+02:30:46 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x01'
+02:30:46 DLE_Exp2_Node2 Rx: message 2: b'\x01\x01'
+02:30:46 DLE_Exp2_Node2 FSM: event type: 2
+02:30:46 DLE_Exp2_Node2 Tx: message 3: {"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}
+02:30:46 DLE_Exp2_Node2 FSM: event type: 0
+02:30:46 DLE_Exp2_Node2 FSM: to send frame 2: {"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}
+02:30:47 PLE_Exp2_Node2 Tx: b'\x00\x02{"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}'
+02:30:47 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x02{"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}'
+02:30:47 PLE_Exp2_Node2 Error: Packet Duplicated
+02:30:47 DLE_Exp2_Node1 Rx: message 4: b'\x00\x02{"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}'
+02:30:47 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x02{"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}'
+02:30:47 DLE_Exp2_Node1 FSM: event type: 1
+02:30:47 DLE_Exp2_Node1 FSM: received frame 2: {"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}
+02:30:47 DLE_Exp2_Node1 Rx: message 5: b'\x00\x02{"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}'
+02:30:47 DLE_Exp2_Node1 FSM: event type: 1
+02:30:47 DLE_Exp2_Node1 FSM: received frame 2: {"experiment_id": 2, "message_id": 2, "time": 1679722238041674222}
+02:30:47 DLE_Exp2_Node1 FSM: received frame 2 but expected 3
+02:30:47 PLE_Exp2_Node1 Tx: b'\x01\x02'
+02:30:47 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x02'
+02:30:47 DLE_Exp2_Node2 Rx: message 3: b'\x01\x02'
+02:30:47 DLE_Exp2_Node2 FSM: event type: 2
+02:30:47 DLE_Exp2_Node2 Tx: message 4: {"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}
+02:30:47 DLE_Exp2_Node2 FSM: event type: 0
+02:30:47 DLE_Exp2_Node2 FSM: to send frame 3: {"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}
+02:30:48 PLE_Exp2_Node2 Tx: b'\x00\x03{"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}'
+02:30:48 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x03{"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}'
+02:30:48 DLE_Exp2_Node1 Rx: message 6: b'\x00\x03{"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}'
+02:30:48 DLE_Exp2_Node1 FSM: event type: 1
+02:30:48 DLE_Exp2_Node1 FSM: received frame 3: {"experiment_id": 2, "message_id": 3, "time": 1679722238041677289}
+02:30:49 PLE_Exp2_Node1 Tx: b'\x01\x02'
+02:30:49 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x02'
+02:30:49 DLE_Exp2_Node2 Rx: message 4: b'\x01\x02'
+02:30:49 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 2 does not match local seq # 3
+02:30:51 PLE_Exp2_Node1 Tx: b'\x01\x03'
+02:30:51 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x03'
+02:30:51 DLE_Exp2_Node2 Rx: message 5: b'\x01\x03'
+02:30:51 DLE_Exp2_Node2 FSM: event type: 2
+02:30:51 DLE_Exp2_Node2 Tx: message 5: {"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}
+02:30:51 DLE_Exp2_Node2 FSM: event type: 0
+02:30:51 DLE_Exp2_Node2 FSM: to send frame 4: {"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}
+02:30:51 PLE_Exp2_Node2 Tx: b'\x00\x04{"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}'
+packet lost
+02:30:57 DLE_Exp2_Node2 FSM: event type: 3
+02:30:57 DLE_Exp2_Node2 FSM: to resend frame 4: {"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}
+02:30:57 PLE_Exp2_Node2 Tx: b'\x00\x04{"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}'
+02:30:57 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x04{"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}'
+02:30:57 DLE_Exp2_Node1 Rx: message 7: b'\x00\x04{"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}'
+02:30:57 DLE_Exp2_Node1 FSM: event type: 1
+02:30:57 DLE_Exp2_Node1 FSM: received frame 4: {"experiment_id": 2, "message_id": 4, "time": 1679722238041679938}
+02:30:58 PLE_Exp2_Node1 Tx: b'\x01\x04'
+02:30:58 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x04'
+02:30:58 DLE_Exp2_Node2 Rx: message 6: b'\x01\x04'
+02:30:58 DLE_Exp2_Node2 FSM: event type: 2
+02:30:58 DLE_Exp2_Node2 Tx: message 6: {"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}
+02:30:58 DLE_Exp2_Node2 FSM: event type: 0
+02:30:58 DLE_Exp2_Node2 FSM: to send frame 5: {"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}
+02:30:59 PLE_Exp2_Node2 Tx: b'\x00\x05{"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}'
+02:30:59 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x05{"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}'
+02:30:59 DLE_Exp2_Node1 Rx: message 8: b'\x00\x05{"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}'
+02:30:59 DLE_Exp2_Node1 FSM: event type: 1
+02:30:59 DLE_Exp2_Node1 FSM: received frame 5: {"experiment_id": 2, "message_id": 5, "time": 1679722238041682413}
+02:31:00 PLE_Exp2_Node1 Tx: b'\x01\x05'
+02:31:00 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x05'
+02:31:00 DLE_Exp2_Node2 Rx: message 7: b'\x01\x05'
+02:31:00 DLE_Exp2_Node2 FSM: event type: 2
+02:31:00 DLE_Exp2_Node2 Tx: message 7: {"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}
+02:31:00 DLE_Exp2_Node2 FSM: event type: 0
+02:31:00 DLE_Exp2_Node2 FSM: to send frame 6: {"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}
+02:31:01 PLE_Exp2_Node2 Tx: b'\x00\x06{"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}'
+02:31:01 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x06{"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}'
+02:31:01 DLE_Exp2_Node1 Rx: message 9: b'\x00\x06{"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}'
+02:31:01 DLE_Exp2_Node1 FSM: event type: 1
+02:31:01 DLE_Exp2_Node1 FSM: received frame 6: {"experiment_id": 2, "message_id": 6, "time": 1679722238041685033}
+02:31:01 PLE_Exp2_Node1 Tx: b'\x01\x06'
+02:31:01 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x06'
+02:31:01 DLE_Exp2_Node2 Rx: message 8: b'\x01\x06'
+02:31:01 DLE_Exp2_Node2 FSM: event type: 2
+02:31:01 DLE_Exp2_Node2 Tx: message 8: {"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}
+02:31:01 DLE_Exp2_Node2 FSM: event type: 0
+02:31:01 DLE_Exp2_Node2 FSM: to send frame 7: {"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}
+02:31:02 PLE_Exp2_Node2 Tx: b'\x00\x07{"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}'
+02:31:02 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x07{"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}'
+02:31:02 DLE_Exp2_Node1 Rx: message 10: b'\x00\x07{"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}'
+02:31:02 DLE_Exp2_Node1 FSM: event type: 1
+02:31:02 DLE_Exp2_Node1 FSM: received frame 7: {"experiment_id": 2, "message_id": 7, "time": 1679722238041687682}
+02:31:03 PLE_Exp2_Node1 Tx: b'\x01\x07'
+02:31:03 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x07'
+02:31:03 DLE_Exp2_Node2 Rx: message 9: b'\x01\x07'
+02:31:03 DLE_Exp2_Node2 FSM: event type: 2
+02:31:03 DLE_Exp2_Node2 Tx: message 9: {"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}
+02:31:03 DLE_Exp2_Node2 FSM: event type: 0
+02:31:03 DLE_Exp2_Node2 FSM: to send frame 8: {"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}
+02:31:04 PLE_Exp2_Node2 Tx: b'\x00\x08{"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}'
+02:31:04 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x08{"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}'
+02:31:04 DLE_Exp2_Node1 Rx: message 11: b'\x00\x08{"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}'
+02:31:04 DLE_Exp2_Node1 FSM: event type: 1
+02:31:04 DLE_Exp2_Node1 FSM: received frame 8: {"experiment_id": 2, "message_id": 8, "time": 1679722238041691330}
+02:31:05 PLE_Exp2_Node1 Tx: b'\x01\x08'
+02:31:05 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x08'
+02:31:05 DLE_Exp2_Node2 Rx: message 10: b'\x01\x08'
+02:31:05 DLE_Exp2_Node2 FSM: event type: 2
+02:31:05 DLE_Exp2_Node2 Tx: message 10: {"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}
+02:31:05 DLE_Exp2_Node2 FSM: event type: 0
+02:31:05 DLE_Exp2_Node2 FSM: to send frame 9: {"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}
+02:31:06 PLE_Exp2_Node2 Tx: b'\x00\t{"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}'
+02:31:06 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\t{"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}'
+02:31:06 DLE_Exp2_Node1 Rx: message 12: b'\x00\t{"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}'
+02:31:06 DLE_Exp2_Node1 FSM: event type: 1
+02:31:06 DLE_Exp2_Node1 FSM: received frame 9: {"experiment_id": 2, "message_id": 9, "time": 1679722238041694027}
+02:31:08 PLE_Exp2_Node1 Tx: b'\x01\t'
+02:31:08 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\t'
+02:31:08 DLE_Exp2_Node2 Rx: message 11: b'\x01\t'
+02:31:08 DLE_Exp2_Node2 FSM: event type: 2
+02:31:08 DLE_Exp2_Node2 Tx: message 11: {"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}
+02:31:08 DLE_Exp2_Node2 FSM: event type: 0
+02:31:08 DLE_Exp2_Node2 FSM: to send frame 10: {"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}
+02:31:09 PLE_Exp2_Node2 Tx: b'\x00\n{"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}'
+02:31:09 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\n{"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}'
+02:31:09 DLE_Exp2_Node1 Rx: message 13: b'\x00\n{"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}'
+02:31:09 DLE_Exp2_Node1 FSM: event type: 1
+02:31:09 DLE_Exp2_Node1 FSM: received frame 10: {"experiment_id": 2, "message_id": 10, "time": 1679722238041696533}
+02:31:10 PLE_Exp2_Node1 Tx: b'\x01\n'
+02:31:10 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\n'
+02:31:10 DLE_Exp2_Node2 Rx: message 12: b'\x01\n'
+02:31:10 DLE_Exp2_Node2 FSM: event type: 2
+02:31:10 DLE_Exp2_Node2 Tx: message 12: {"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}
+02:31:10 DLE_Exp2_Node2 FSM: event type: 0
+02:31:10 DLE_Exp2_Node2 FSM: to send frame 11: {"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}
+02:31:11 PLE_Exp2_Node2 Tx: b'\x00\x0b{"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}'
+02:31:11 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x0b{"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}'
+02:31:11 DLE_Exp2_Node1 Rx: message 14: b'\x00\x0b{"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}'
+02:31:11 DLE_Exp2_Node1 FSM: event type: 1
+02:31:11 DLE_Exp2_Node1 FSM: received frame 11: {"experiment_id": 2, "message_id": 11, "time": 1679722238041699069}
+02:31:13 PLE_Exp2_Node1 Tx: b'\x01\x0b'
+02:31:13 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x0b'
+02:31:13 DLE_Exp2_Node2 Rx: message 13: b'\x01\x0b'
+02:31:13 DLE_Exp2_Node2 FSM: event type: 2
+02:31:13 DLE_Exp2_Node2 Tx: message 13: {"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}
+02:31:13 DLE_Exp2_Node2 FSM: event type: 0
+02:31:13 DLE_Exp2_Node2 FSM: to send frame 12: {"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}
+02:31:14 PLE_Exp2_Node2 Tx: b'\x00\x0c{"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}'
+02:31:14 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x0c{"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}'
+02:31:14 DLE_Exp2_Node1 Rx: message 15: b'\x00\x0c{"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}'
+02:31:14 DLE_Exp2_Node1 FSM: event type: 1
+02:31:14 DLE_Exp2_Node1 FSM: received frame 12: {"experiment_id": 2, "message_id": 12, "time": 1679722238041701529}
+02:31:15 PLE_Exp2_Node1 Tx: b'\x01\x0c'
+02:31:15 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x0c'
+02:31:15 DLE_Exp2_Node2 Rx: message 14: b'\x01\x0c'
+02:31:15 DLE_Exp2_Node2 FSM: event type: 2
+02:31:15 DLE_Exp2_Node2 Tx: message 14: {"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}
+02:31:15 DLE_Exp2_Node2 FSM: event type: 0
+02:31:15 DLE_Exp2_Node2 FSM: to send frame 13: {"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}
+02:31:16 PLE_Exp2_Node2 Tx: b'\x00\r{"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}'
+packet lost
+02:31:21 DLE_Exp2_Node2 FSM: event type: 3
+02:31:21 DLE_Exp2_Node2 FSM: to resend frame 13: {"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}
+02:31:22 PLE_Exp2_Node2 Tx: b'\x00\r{"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}'
+02:31:22 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\r{"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}'
+02:31:22 DLE_Exp2_Node1 Rx: message 16: b'\x00\r{"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}'
+02:31:22 DLE_Exp2_Node1 FSM: event type: 1
+02:31:22 DLE_Exp2_Node1 FSM: received frame 13: {"experiment_id": 2, "message_id": 13, "time": 1679722238041704216}
+02:31:23 PLE_Exp2_Node1 Tx: b'\x01\r'
+02:31:23 PLE_Exp2_Node1 Error: Packet Duplicated
+02:31:23 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\r'
+02:31:23 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\r'
+02:31:23 DLE_Exp2_Node2 Rx: message 15: b'\x01\r'
+02:31:23 DLE_Exp2_Node2 Rx: message 16: b'\x01\r'
+02:31:23 DLE_Exp2_Node2 FSM: event type: 2
+02:31:23 DLE_Exp2_Node2 FSM: event type: 2
+02:31:23 DLE_Exp2_Node2 FSM: error! b'\r'
+02:31:23 DLE_Exp2_Node2 Tx: message 15: {"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}
+02:31:23 DLE_Exp2_Node2 FSM: event type: 0
+02:31:23 DLE_Exp2_Node2 FSM: to send frame 14: {"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}
+02:31:24 PLE_Exp2_Node2 Tx: b'\x00\x0e{"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}'
+02:31:24 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x0e{"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}'
+02:31:24 DLE_Exp2_Node1 Rx: message 17: b'\x00\x0e{"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}'
+02:31:24 DLE_Exp2_Node1 FSM: event type: 1
+02:31:24 DLE_Exp2_Node1 FSM: received frame 14: {"experiment_id": 2, "message_id": 14, "time": 1679722238041706734}
+02:31:24 PLE_Exp2_Node1 Tx: b'\x01\x0e'
+02:31:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x0e'
+02:31:24 DLE_Exp2_Node2 Rx: message 17: b'\x01\x0e'
+02:31:24 DLE_Exp2_Node2 FSM: event type: 2
+02:31:24 DLE_Exp2_Node2 Tx: message 16: {"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}
+02:31:24 DLE_Exp2_Node2 FSM: event type: 0
+02:31:24 DLE_Exp2_Node2 FSM: to send frame 15: {"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}
+02:31:24 PLE_Exp2_Node1 Error: Packet Duplicated
+02:31:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x0e'
+02:31:24 DLE_Exp2_Node2 Rx: message 18: b'\x01\x0e'
+02:31:25 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 14 does not match local seq # 15
+02:31:25 PLE_Exp2_Node2 Tx: b'\x00\x0f{"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}'
+02:31:25 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x0f{"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}'
+02:31:25 DLE_Exp2_Node1 Rx: message 18: b'\x00\x0f{"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}'
+02:31:25 DLE_Exp2_Node1 FSM: event type: 1
+02:31:25 DLE_Exp2_Node1 FSM: received frame 15: {"experiment_id": 2, "message_id": 15, "time": 1679722238041709250}
+02:31:25 PLE_Exp2_Node1 Tx: b'\x01\x0f'
+02:31:25 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x0f'
+02:31:25 DLE_Exp2_Node2 Rx: message 19: b'\x01\x0f'
+02:31:25 DLE_Exp2_Node2 FSM: event type: 2
+02:31:25 DLE_Exp2_Node2 Tx: message 17: {"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}
+02:31:25 DLE_Exp2_Node2 FSM: event type: 0
+02:31:25 DLE_Exp2_Node2 FSM: to send frame 16: {"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}
+02:31:27 PLE_Exp2_Node2 Tx: b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:27 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:27 DLE_Exp2_Node1 Rx: message 19: b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:27 DLE_Exp2_Node1 FSM: event type: 1
+02:31:27 DLE_Exp2_Node1 FSM: received frame 16: {"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}
+02:31:28 PLE_Exp2_Node1 Tx: b'\x01\x10'
+packet lost
+02:31:31 DLE_Exp2_Node2 FSM: event type: 3
+02:31:31 DLE_Exp2_Node2 FSM: to resend frame 16: {"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}
+02:31:33 PLE_Exp2_Node2 Tx: b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:33 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:33 DLE_Exp2_Node1 Rx: message 20: b'\x00\x10{"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}'
+02:31:33 DLE_Exp2_Node1 FSM: event type: 1
+02:31:33 DLE_Exp2_Node1 FSM: received frame 16: {"experiment_id": 2, "message_id": 16, "time": 1679722238041711647}
+02:31:33 DLE_Exp2_Node1 FSM: received frame 16 but expected 17
+02:31:34 PLE_Exp2_Node1 Tx: b'\x01\x10'
+02:31:34 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x10'
+02:31:34 DLE_Exp2_Node2 Rx: message 20: b'\x01\x10'
+02:31:34 DLE_Exp2_Node2 FSM: event type: 2
+02:31:34 DLE_Exp2_Node2 Tx: message 18: {"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}
+02:31:34 DLE_Exp2_Node2 FSM: event type: 0
+02:31:34 DLE_Exp2_Node2 FSM: to send frame 17: {"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}
+02:31:34 PLE_Exp2_Node2 Tx: b'\x00\x11{"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}'
+02:31:34 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x11{"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}'
+02:31:34 DLE_Exp2_Node1 Rx: message 21: b'\x00\x11{"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}'
+02:31:34 DLE_Exp2_Node1 FSM: event type: 1
+02:31:34 DLE_Exp2_Node1 FSM: received frame 17: {"experiment_id": 2, "message_id": 17, "time": 1679722238041714136}
+02:31:35 PLE_Exp2_Node1 Tx: b'\x01\x11'
+02:31:35 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x11'
+02:31:35 DLE_Exp2_Node2 Rx: message 21: b'\x01\x11'
+02:31:35 DLE_Exp2_Node2 FSM: event type: 2
+02:31:35 DLE_Exp2_Node2 Tx: message 19: {"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}
+02:31:35 DLE_Exp2_Node2 FSM: event type: 0
+02:31:35 DLE_Exp2_Node2 FSM: to send frame 18: {"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}
+02:31:35 PLE_Exp2_Node2 Tx: b'\x00\x12{"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}'
+02:31:35 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x12{"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}'
+02:31:35 DLE_Exp2_Node1 Rx: message 22: b'\x00\x12{"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}'
+02:31:35 DLE_Exp2_Node1 FSM: event type: 1
+02:31:35 DLE_Exp2_Node1 FSM: received frame 18: {"experiment_id": 2, "message_id": 18, "time": 1679722238041716590}
+02:31:36 PLE_Exp2_Node1 Tx: b'\x01\x12'
+02:31:36 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x12'
+02:31:36 DLE_Exp2_Node2 Rx: message 22: b'\x01\x12'
+02:31:36 DLE_Exp2_Node2 FSM: event type: 2
+02:31:36 DLE_Exp2_Node2 Tx: message 20: {"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}
+02:31:36 DLE_Exp2_Node2 FSM: event type: 0
+02:31:36 DLE_Exp2_Node2 FSM: to send frame 19: {"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}
+02:31:36 PLE_Exp2_Node2 Tx: b'\x00\x13{"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}'
+02:31:36 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x13{"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}'
+02:31:36 DLE_Exp2_Node1 Rx: message 23: b'\x00\x13{"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}'
+02:31:36 DLE_Exp2_Node1 FSM: event type: 1
+02:31:36 DLE_Exp2_Node1 FSM: received frame 19: {"experiment_id": 2, "message_id": 19, "time": 1679722238041719118}
+02:31:37 PLE_Exp2_Node1 Tx: b'\x01\x13'
+02:31:37 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x13'
+02:31:37 DLE_Exp2_Node2 Rx: message 23: b'\x01\x13'
+02:31:37 DLE_Exp2_Node2 FSM: event type: 2
+02:31:37 DLE_Exp2_Node2 Tx: message 21: {"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}
+02:31:37 DLE_Exp2_Node2 FSM: event type: 0
+02:31:37 DLE_Exp2_Node2 FSM: to send frame 20: {"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}
+02:31:37 PLE_Exp2_Node2 Tx: b'\x00\x14{"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}'
+02:31:37 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x14{"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}'
+02:31:37 DLE_Exp2_Node1 Rx: message 24: b'\x00\x14{"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}'
+02:31:37 DLE_Exp2_Node1 FSM: event type: 1
+02:31:37 DLE_Exp2_Node1 FSM: received frame 20: {"experiment_id": 2, "message_id": 20, "time": 1679722238041721625}
+02:31:39 PLE_Exp2_Node1 Tx: b'\x01\x14'
+02:31:39 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x14'
+02:31:39 DLE_Exp2_Node2 Rx: message 24: b'\x01\x14'
+02:31:39 DLE_Exp2_Node2 FSM: event type: 2
+02:31:39 DLE_Exp2_Node2 Tx: message 22: {"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}
+02:31:39 DLE_Exp2_Node2 FSM: event type: 0
+02:31:39 DLE_Exp2_Node2 FSM: to send frame 21: {"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}
+02:31:40 PLE_Exp2_Node2 Tx: b'\x00\x15{"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}'
+02:31:40 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x15{"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}'
+02:31:40 DLE_Exp2_Node1 Rx: message 25: b'\x00\x15{"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}'
+02:31:40 DLE_Exp2_Node1 FSM: event type: 1
+02:31:40 DLE_Exp2_Node1 FSM: received frame 21: {"experiment_id": 2, "message_id": 21, "time": 1679722238041724145}
+02:31:42 PLE_Exp2_Node1 Tx: b'\x01\x15'
+02:31:42 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x15'
+02:31:42 DLE_Exp2_Node2 Rx: message 25: b'\x01\x15'
+02:31:42 DLE_Exp2_Node2 FSM: event type: 2
+02:31:42 DLE_Exp2_Node2 Tx: message 23: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:42 DLE_Exp2_Node2 FSM: event type: 0
+02:31:42 DLE_Exp2_Node2 FSM: to send frame 22: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:43 PLE_Exp2_Node2 Tx: b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+packet lost
+02:31:48 DLE_Exp2_Node2 FSM: event type: 3
+02:31:48 DLE_Exp2_Node2 FSM: to resend frame 22: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:49 PLE_Exp2_Node2 Tx: b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:49 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:49 DLE_Exp2_Node1 Rx: message 26: b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:49 DLE_Exp2_Node1 FSM: event type: 1
+02:31:49 DLE_Exp2_Node1 FSM: received frame 22: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:49 PLE_Exp2_Node1 Tx: b'\x01\x16'
+packet lost
+02:31:53 DLE_Exp2_Node2 FSM: event type: 3
+02:31:53 DLE_Exp2_Node2 FSM: to resend frame 22: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:54 PLE_Exp2_Node2 Tx: b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:54 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:54 DLE_Exp2_Node1 Rx: message 27: b'\x00\x16{"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}'
+02:31:54 DLE_Exp2_Node1 FSM: event type: 1
+02:31:54 DLE_Exp2_Node1 FSM: received frame 22: {"experiment_id": 2, "message_id": 22, "time": 1679722238041726759}
+02:31:54 DLE_Exp2_Node1 FSM: received frame 22 but expected 23
+02:31:56 PLE_Exp2_Node1 Tx: b'\x01\x16'
+02:31:56 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x16'
+02:31:56 DLE_Exp2_Node2 Rx: message 26: b'\x01\x16'
+02:31:56 DLE_Exp2_Node2 FSM: event type: 2
+02:31:56 DLE_Exp2_Node2 Tx: message 24: {"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}
+02:31:56 DLE_Exp2_Node2 FSM: event type: 0
+02:31:56 DLE_Exp2_Node2 FSM: to send frame 23: {"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}
+02:31:57 PLE_Exp2_Node2 Tx: b'\x00\x17{"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}'
+packet lost
+02:32:02 DLE_Exp2_Node2 FSM: event type: 3
+02:32:02 DLE_Exp2_Node2 FSM: to resend frame 23: {"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}
+02:32:03 PLE_Exp2_Node2 Tx: b'\x00\x17{"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}'
+02:32:03 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x17{"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}'
+02:32:03 DLE_Exp2_Node1 Rx: message 28: b'\x00\x17{"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}'
+02:32:03 DLE_Exp2_Node1 FSM: event type: 1
+02:32:03 DLE_Exp2_Node1 FSM: received frame 23: {"experiment_id": 2, "message_id": 23, "time": 1679722238041729300}
+02:32:04 PLE_Exp2_Node1 Tx: b'\x01\x17'
+02:32:04 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x17'
+02:32:04 DLE_Exp2_Node2 Rx: message 27: b'\x01\x17'
+02:32:04 DLE_Exp2_Node2 FSM: event type: 2
+02:32:04 DLE_Exp2_Node2 Tx: message 25: {"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}
+02:32:04 DLE_Exp2_Node2 FSM: event type: 0
+02:32:04 DLE_Exp2_Node2 FSM: to send frame 24: {"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}
+02:32:05 PLE_Exp2_Node2 Tx: b'\x00\x18{"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}'
+02:32:05 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x18{"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}'
+02:32:05 DLE_Exp2_Node1 Rx: message 29: b'\x00\x18{"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}'
+02:32:05 DLE_Exp2_Node1 FSM: event type: 1
+02:32:05 DLE_Exp2_Node1 FSM: received frame 24: {"experiment_id": 2, "message_id": 24, "time": 1679722238041731745}
+02:32:06 PLE_Exp2_Node1 Tx: b'\x01\x18'
+02:32:06 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x18'
+02:32:06 DLE_Exp2_Node2 Rx: message 28: b'\x01\x18'
+02:32:06 DLE_Exp2_Node2 FSM: event type: 2
+02:32:06 DLE_Exp2_Node2 Tx: message 26: {"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}
+02:32:06 DLE_Exp2_Node2 FSM: event type: 0
+02:32:06 DLE_Exp2_Node2 FSM: to send frame 25: {"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}
+02:32:08 PLE_Exp2_Node2 Tx: b'\x00\x19{"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}'
+packet lost
+02:32:12 DLE_Exp2_Node2 FSM: event type: 3
+02:32:12 DLE_Exp2_Node2 FSM: to resend frame 25: {"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}
+02:32:14 PLE_Exp2_Node2 Tx: b'\x00\x19{"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}'
+02:32:14 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x19{"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}'
+02:32:14 DLE_Exp2_Node1 Rx: message 30: b'\x00\x19{"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}'
+02:32:14 DLE_Exp2_Node1 FSM: event type: 1
+02:32:14 DLE_Exp2_Node1 FSM: received frame 25: {"experiment_id": 2, "message_id": 25, "time": 1679722238041734190}
+02:32:14 PLE_Exp2_Node1 Tx: b'\x01\x19'
+02:32:14 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x19'
+02:32:14 DLE_Exp2_Node2 Rx: message 29: b'\x01\x19'
+02:32:14 DLE_Exp2_Node2 FSM: event type: 2
+02:32:14 DLE_Exp2_Node2 Tx: message 27: {"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}
+02:32:14 DLE_Exp2_Node2 FSM: event type: 0
+02:32:14 DLE_Exp2_Node2 FSM: to send frame 26: {"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}
+02:32:15 PLE_Exp2_Node2 Tx: b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:15 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:15 DLE_Exp2_Node1 Rx: message 31: b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:15 DLE_Exp2_Node1 FSM: event type: 1
+02:32:15 DLE_Exp2_Node1 FSM: received frame 26: {"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}
+02:32:15 PLE_Exp2_Node1 Tx: b'\x01\x1a'
+packet lost
+02:32:20 DLE_Exp2_Node2 FSM: event type: 3
+02:32:20 DLE_Exp2_Node2 FSM: to resend frame 26: {"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}
+02:32:21 PLE_Exp2_Node2 Tx: b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:21 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:21 DLE_Exp2_Node1 Rx: message 32: b'\x00\x1a{"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}'
+02:32:21 DLE_Exp2_Node1 FSM: event type: 1
+02:32:21 DLE_Exp2_Node1 FSM: received frame 26: {"experiment_id": 2, "message_id": 26, "time": 1679722238041736657}
+02:32:21 DLE_Exp2_Node1 FSM: received frame 26 but expected 27
+02:32:21 PLE_Exp2_Node1 Tx: b'\x01\x1a'
+02:32:21 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1a'
+02:32:21 DLE_Exp2_Node2 Rx: message 30: b'\x01\x1a'
+02:32:21 DLE_Exp2_Node2 FSM: event type: 2
+02:32:21 DLE_Exp2_Node2 Tx: message 28: {"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}
+02:32:21 DLE_Exp2_Node2 FSM: event type: 0
+02:32:21 DLE_Exp2_Node2 FSM: to send frame 27: {"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}
+02:32:22 PLE_Exp2_Node2 Tx: b'\x00\x1b{"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}'
+02:32:22 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1b{"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}'
+02:32:22 DLE_Exp2_Node1 Rx: message 33: b'\x00\x1b{"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}'
+02:32:22 DLE_Exp2_Node1 FSM: event type: 1
+02:32:22 DLE_Exp2_Node1 FSM: received frame 27: {"experiment_id": 2, "message_id": 27, "time": 1679722238041739204}
+02:32:24 PLE_Exp2_Node1 Tx: b'\x01\x1b'
+02:32:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1b'
+02:32:24 DLE_Exp2_Node2 Rx: message 31: b'\x01\x1b'
+02:32:24 DLE_Exp2_Node2 FSM: event type: 2
+02:32:24 DLE_Exp2_Node2 Tx: message 29: {"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}
+02:32:24 DLE_Exp2_Node2 FSM: event type: 0
+02:32:24 DLE_Exp2_Node2 FSM: to send frame 28: {"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}
+02:32:24 PLE_Exp2_Node1 Error: Packet Duplicated
+02:32:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1b'
+02:32:24 DLE_Exp2_Node2 Rx: message 32: b'\x01\x1b'
+02:32:24 PLE_Exp2_Node2 Tx: b'\x00\x1c{"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}'
+02:32:24 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1c{"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}'
+02:32:24 DLE_Exp2_Node1 Rx: message 34: b'\x00\x1c{"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}'
+02:32:24 DLE_Exp2_Node1 FSM: event type: 1
+02:32:24 DLE_Exp2_Node1 FSM: received frame 28: {"experiment_id": 2, "message_id": 28, "time": 1679722238041741897}
+02:32:24 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 27 does not match local seq # 28
+02:32:24 PLE_Exp2_Node1 Tx: b'\x01\x1c'
+02:32:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1c'
+02:32:24 DLE_Exp2_Node2 Rx: message 33: b'\x01\x1c'
+02:32:24 DLE_Exp2_Node2 FSM: event type: 2
+02:32:24 DLE_Exp2_Node2 Tx: message 30: {"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}
+02:32:24 DLE_Exp2_Node2 FSM: event type: 0
+02:32:24 DLE_Exp2_Node2 FSM: to send frame 29: {"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}
+02:32:26 PLE_Exp2_Node2 Tx: b'\x00\x1d{"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}'
+02:32:26 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1d{"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}'
+02:32:26 DLE_Exp2_Node1 Rx: message 35: b'\x00\x1d{"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}'
+02:32:26 DLE_Exp2_Node1 FSM: event type: 1
+02:32:26 DLE_Exp2_Node1 FSM: received frame 29: {"experiment_id": 2, "message_id": 29, "time": 1679722238041744349}
+02:32:27 PLE_Exp2_Node1 Tx: b'\x01\x1d'
+02:32:27 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1d'
+02:32:27 DLE_Exp2_Node2 Rx: message 34: b'\x01\x1d'
+02:32:27 DLE_Exp2_Node2 FSM: event type: 2
+02:32:27 DLE_Exp2_Node2 Tx: message 31: {"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}
+02:32:27 DLE_Exp2_Node2 FSM: event type: 0
+02:32:27 DLE_Exp2_Node2 FSM: to send frame 30: {"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}
+02:32:27 PLE_Exp2_Node2 Tx: b'\x00\x1e{"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}'
+02:32:27 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1e{"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}'
+02:32:27 DLE_Exp2_Node1 Rx: message 36: b'\x00\x1e{"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}'
+02:32:27 DLE_Exp2_Node1 FSM: event type: 1
+02:32:27 DLE_Exp2_Node1 FSM: received frame 30: {"experiment_id": 2, "message_id": 30, "time": 1679722238041746806}
+02:32:29 PLE_Exp2_Node1 Tx: b'\x01\x1e'
+02:32:29 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1e'
+02:32:29 DLE_Exp2_Node2 Rx: message 35: b'\x01\x1e'
+02:32:29 DLE_Exp2_Node2 FSM: event type: 2
+02:32:29 DLE_Exp2_Node2 Tx: message 32: {"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}
+02:32:29 DLE_Exp2_Node2 FSM: event type: 0
+02:32:29 DLE_Exp2_Node2 FSM: to send frame 31: {"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}
+02:32:30 PLE_Exp2_Node2 Tx: b'\x00\x1f{"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}'
+02:32:30 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\x1f{"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}'
+02:32:30 DLE_Exp2_Node1 Rx: message 37: b'\x00\x1f{"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}'
+02:32:30 DLE_Exp2_Node1 FSM: event type: 1
+02:32:30 DLE_Exp2_Node1 FSM: received frame 31: {"experiment_id": 2, "message_id": 31, "time": 1679722238041749285}
+02:32:31 PLE_Exp2_Node1 Tx: b'\x01\x1f'
+02:32:31 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\x1f'
+02:32:31 DLE_Exp2_Node2 Rx: message 36: b'\x01\x1f'
+02:32:31 DLE_Exp2_Node2 FSM: event type: 2
+02:32:31 DLE_Exp2_Node2 Tx: message 33: {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}
+02:32:31 DLE_Exp2_Node2 FSM: event type: 0
+02:32:31 DLE_Exp2_Node2 FSM: to send frame 32: {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}
+02:32:31 PLE_Exp2_Node2 Tx: b'\x00 {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}'
+02:32:31 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00 {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}'
+02:32:31 DLE_Exp2_Node1 Rx: message 38: b'\x00 {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}'
+02:32:31 DLE_Exp2_Node1 FSM: event type: 1
+02:32:31 DLE_Exp2_Node1 FSM: received frame 32: {"experiment_id": 2, "message_id": 32, "time": 1679722238041751795}
+02:32:32 PLE_Exp2_Node1 Tx: b'\x01 '
+02:32:32 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01 '
+02:32:32 DLE_Exp2_Node2 Rx: message 37: b'\x01 '
+02:32:32 DLE_Exp2_Node2 FSM: event type: 2
+02:32:32 DLE_Exp2_Node2 Tx: message 34: {"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}
+02:32:32 DLE_Exp2_Node2 FSM: event type: 0
+02:32:32 DLE_Exp2_Node2 FSM: to send frame 33: {"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}
+02:32:34 PLE_Exp2_Node2 Tx: b'\x00!{"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}'
+02:32:34 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00!{"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}'
+02:32:34 DLE_Exp2_Node1 Rx: message 39: b'\x00!{"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}'
+02:32:34 DLE_Exp2_Node1 FSM: event type: 1
+02:32:34 DLE_Exp2_Node1 FSM: received frame 33: {"experiment_id": 2, "message_id": 33, "time": 1679722238041754876}
+02:32:35 PLE_Exp2_Node1 Tx: b'\x01!'
+02:32:35 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01!'
+02:32:35 DLE_Exp2_Node2 Rx: message 38: b'\x01!'
+02:32:35 DLE_Exp2_Node2 FSM: event type: 2
+02:32:35 DLE_Exp2_Node2 Tx: message 35: {"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}
+02:32:35 DLE_Exp2_Node2 FSM: event type: 0
+02:32:35 DLE_Exp2_Node2 FSM: to send frame 34: {"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}
+02:32:36 PLE_Exp2_Node2 Tx: b'\x00"{"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}'
+02:32:36 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00"{"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}'
+02:32:36 DLE_Exp2_Node1 Rx: message 40: b'\x00"{"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}'
+02:32:36 DLE_Exp2_Node1 FSM: event type: 1
+02:32:36 DLE_Exp2_Node1 FSM: received frame 34: {"experiment_id": 2, "message_id": 34, "time": 1679722238041757367}
+02:32:37 PLE_Exp2_Node1 Tx: b'\x01"'
+02:32:37 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01"'
+02:32:37 DLE_Exp2_Node2 Rx: message 39: b'\x01"'
+02:32:37 DLE_Exp2_Node2 FSM: event type: 2
+02:32:37 DLE_Exp2_Node2 Tx: message 36: {"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}
+02:32:37 DLE_Exp2_Node2 FSM: event type: 0
+02:32:37 DLE_Exp2_Node2 FSM: to send frame 35: {"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}
+02:32:39 PLE_Exp2_Node2 Tx: b'\x00#{"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}'
+02:32:39 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00#{"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}'
+02:32:39 DLE_Exp2_Node1 Rx: message 41: b'\x00#{"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}'
+02:32:39 DLE_Exp2_Node1 FSM: event type: 1
+02:32:39 DLE_Exp2_Node1 FSM: received frame 35: {"experiment_id": 2, "message_id": 35, "time": 1679722238041759809}
+02:32:39 PLE_Exp2_Node1 Tx: b'\x01#'
+02:32:39 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01#'
+02:32:39 DLE_Exp2_Node2 Rx: message 40: b'\x01#'
+02:32:39 DLE_Exp2_Node2 FSM: event type: 2
+02:32:39 DLE_Exp2_Node2 Tx: message 37: {"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}
+02:32:39 DLE_Exp2_Node2 FSM: event type: 0
+02:32:39 DLE_Exp2_Node2 FSM: to send frame 36: {"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}
+02:32:41 PLE_Exp2_Node2 Tx: b'\x00${"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}'
+02:32:41 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00${"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}'
+02:32:41 DLE_Exp2_Node1 Rx: message 42: b'\x00${"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}'
+02:32:41 DLE_Exp2_Node1 FSM: event type: 1
+02:32:41 DLE_Exp2_Node1 FSM: received frame 36: {"experiment_id": 2, "message_id": 36, "time": 1679722238041762255}
+02:32:43 PLE_Exp2_Node1 Tx: b'\x01$'
+02:32:43 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01$'
+02:32:43 DLE_Exp2_Node2 Rx: message 41: b'\x01$'
+02:32:43 DLE_Exp2_Node2 FSM: event type: 2
+02:32:43 DLE_Exp2_Node2 Tx: message 38: {"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}
+02:32:43 DLE_Exp2_Node2 FSM: event type: 0
+02:32:43 DLE_Exp2_Node2 FSM: to send frame 37: {"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}
+02:32:44 PLE_Exp2_Node2 Tx: b'\x00%{"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}'
+packet lost
+02:32:49 DLE_Exp2_Node2 FSM: event type: 3
+02:32:49 DLE_Exp2_Node2 FSM: to resend frame 37: {"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}
+02:32:50 PLE_Exp2_Node2 Tx: b'\x00%{"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}'
+02:32:50 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00%{"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}'
+02:32:50 DLE_Exp2_Node1 Rx: message 43: b'\x00%{"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}'
+02:32:50 DLE_Exp2_Node1 FSM: event type: 1
+02:32:50 DLE_Exp2_Node1 FSM: received frame 37: {"experiment_id": 2, "message_id": 37, "time": 1679722238041764802}
+02:32:51 PLE_Exp2_Node1 Tx: b'\x01%'
+02:32:51 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01%'
+02:32:51 DLE_Exp2_Node2 Rx: message 42: b'\x01%'
+02:32:51 DLE_Exp2_Node2 FSM: event type: 2
+02:32:51 DLE_Exp2_Node2 Tx: message 39: {"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}
+02:32:51 DLE_Exp2_Node2 FSM: event type: 0
+02:32:51 DLE_Exp2_Node2 FSM: to send frame 38: {"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}
+02:32:52 PLE_Exp2_Node2 Tx: b'\x00&{"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}'
+02:32:52 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00&{"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}'
+02:32:52 DLE_Exp2_Node1 Rx: message 44: b'\x00&{"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}'
+02:32:52 DLE_Exp2_Node1 FSM: event type: 1
+02:32:52 DLE_Exp2_Node1 FSM: received frame 38: {"experiment_id": 2, "message_id": 38, "time": 1679722238041767376}
+02:32:53 PLE_Exp2_Node1 Tx: b'\x01&'
+02:32:53 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01&'
+02:32:53 DLE_Exp2_Node2 Rx: message 43: b'\x01&'
+02:32:53 DLE_Exp2_Node2 FSM: event type: 2
+02:32:53 DLE_Exp2_Node2 Tx: message 40: {"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}
+02:32:53 DLE_Exp2_Node2 FSM: event type: 0
+02:32:53 DLE_Exp2_Node2 FSM: to send frame 39: {"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}
+02:32:54 PLE_Exp2_Node2 Tx: b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:32:54 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:32:54 DLE_Exp2_Node1 Rx: message 45: b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:32:54 DLE_Exp2_Node1 FSM: event type: 1
+02:32:54 DLE_Exp2_Node1 FSM: received frame 39: {"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}
+02:32:55 PLE_Exp2_Node1 Tx: b"\x01'"
+packet lost
+02:32:59 DLE_Exp2_Node2 FSM: event type: 3
+02:32:59 DLE_Exp2_Node2 FSM: to resend frame 39: {"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}
+02:33:00 PLE_Exp2_Node2 Tx: b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:33:00 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:33:00 DLE_Exp2_Node1 Rx: message 46: b'\x00\'{"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}'
+02:33:00 DLE_Exp2_Node1 FSM: event type: 1
+02:33:00 DLE_Exp2_Node1 FSM: received frame 39: {"experiment_id": 2, "message_id": 39, "time": 1679722238041769972}
+02:33:00 DLE_Exp2_Node1 FSM: received frame 39 but expected 40
+02:33:02 PLE_Exp2_Node1 Tx: b"\x01'"
+02:33:02 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b"\x01'"
+02:33:02 DLE_Exp2_Node2 Rx: message 44: b"\x01'"
+02:33:02 DLE_Exp2_Node2 FSM: event type: 2
+02:33:02 DLE_Exp2_Node2 Tx: message 41: {"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}
+02:33:02 DLE_Exp2_Node2 FSM: event type: 0
+02:33:02 DLE_Exp2_Node2 FSM: to send frame 40: {"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}
+02:33:02 PLE_Exp2_Node2 Tx: b'\x00({"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}'
+02:33:02 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00({"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}'
+02:33:02 DLE_Exp2_Node1 Rx: message 47: b'\x00({"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}'
+02:33:02 DLE_Exp2_Node1 FSM: event type: 1
+02:33:02 DLE_Exp2_Node1 FSM: received frame 40: {"experiment_id": 2, "message_id": 40, "time": 1679722238041772470}
+02:33:02 PLE_Exp2_Node1 Tx: b'\x01('
+02:33:02 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01('
+02:33:02 DLE_Exp2_Node2 Rx: message 45: b'\x01('
+02:33:02 DLE_Exp2_Node2 FSM: event type: 2
+02:33:02 DLE_Exp2_Node2 Tx: message 42: {"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}
+02:33:02 DLE_Exp2_Node2 FSM: event type: 0
+02:33:02 DLE_Exp2_Node2 FSM: to send frame 41: {"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}
+02:33:03 PLE_Exp2_Node2 Tx: b'\x00){"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}'
+02:33:03 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00){"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}'
+02:33:03 DLE_Exp2_Node1 Rx: message 48: b'\x00){"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}'
+02:33:03 DLE_Exp2_Node1 FSM: event type: 1
+02:33:03 DLE_Exp2_Node1 FSM: received frame 41: {"experiment_id": 2, "message_id": 41, "time": 1679722238041774937}
+02:33:04 PLE_Exp2_Node1 Tx: b'\x01)'
+02:33:04 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01)'
+02:33:04 DLE_Exp2_Node2 Rx: message 46: b'\x01)'
+02:33:04 DLE_Exp2_Node2 FSM: event type: 2
+02:33:04 DLE_Exp2_Node2 Tx: message 43: {"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}
+02:33:04 DLE_Exp2_Node2 FSM: event type: 0
+02:33:04 DLE_Exp2_Node2 FSM: to send frame 42: {"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}
+02:33:05 PLE_Exp2_Node2 Tx: b'\x00*{"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}'
+02:33:05 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00*{"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}'
+02:33:05 DLE_Exp2_Node1 Rx: message 49: b'\x00*{"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}'
+02:33:05 DLE_Exp2_Node1 FSM: event type: 1
+02:33:05 DLE_Exp2_Node1 FSM: received frame 42: {"experiment_id": 2, "message_id": 42, "time": 1679722238041777382}
+02:33:06 PLE_Exp2_Node1 Tx: b'\x01*'
+02:33:06 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01*'
+02:33:06 DLE_Exp2_Node2 Rx: message 47: b'\x01*'
+02:33:06 DLE_Exp2_Node2 FSM: event type: 2
+02:33:06 DLE_Exp2_Node2 Tx: message 44: {"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}
+02:33:06 DLE_Exp2_Node2 FSM: event type: 0
+02:33:06 DLE_Exp2_Node2 FSM: to send frame 43: {"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}
+02:33:07 PLE_Exp2_Node2 Tx: b'\x00+{"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}'
+02:33:07 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00+{"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}'
+02:33:07 DLE_Exp2_Node1 Rx: message 50: b'\x00+{"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}'
+02:33:07 DLE_Exp2_Node1 FSM: event type: 1
+02:33:07 DLE_Exp2_Node1 FSM: received frame 43: {"experiment_id": 2, "message_id": 43, "time": 1679722238041779915}
+02:33:08 PLE_Exp2_Node1 Tx: b'\x01+'
+02:33:08 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01+'
+02:33:08 DLE_Exp2_Node2 Rx: message 48: b'\x01+'
+02:33:08 DLE_Exp2_Node2 FSM: event type: 2
+02:33:08 DLE_Exp2_Node2 Tx: message 45: {"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}
+02:33:08 DLE_Exp2_Node2 FSM: event type: 0
+02:33:08 DLE_Exp2_Node2 FSM: to send frame 44: {"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}
+02:33:09 PLE_Exp2_Node2 Tx: b'\x00,{"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}'
+02:33:09 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00,{"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}'
+02:33:09 DLE_Exp2_Node1 Rx: message 51: b'\x00,{"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}'
+02:33:09 DLE_Exp2_Node1 FSM: event type: 1
+02:33:09 DLE_Exp2_Node1 FSM: received frame 44: {"experiment_id": 2, "message_id": 44, "time": 1679722238041782625}
+02:33:10 PLE_Exp2_Node1 Tx: b'\x01,'
+02:33:10 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01,'
+02:33:10 DLE_Exp2_Node2 Rx: message 49: b'\x01,'
+02:33:10 DLE_Exp2_Node2 FSM: event type: 2
+02:33:10 DLE_Exp2_Node2 Tx: message 46: {"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}
+02:33:10 DLE_Exp2_Node2 FSM: event type: 0
+02:33:10 DLE_Exp2_Node2 FSM: to send frame 45: {"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}
+02:33:10 PLE_Exp2_Node2 Tx: b'\x00-{"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}'
+02:33:10 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00-{"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}'
+02:33:10 DLE_Exp2_Node1 Rx: message 52: b'\x00-{"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}'
+02:33:10 DLE_Exp2_Node1 FSM: event type: 1
+02:33:10 DLE_Exp2_Node1 FSM: received frame 45: {"experiment_id": 2, "message_id": 45, "time": 1679722238041785091}
+02:33:12 PLE_Exp2_Node1 Tx: b'\x01-'
+02:33:12 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01-'
+02:33:12 DLE_Exp2_Node2 Rx: message 50: b'\x01-'
+02:33:12 DLE_Exp2_Node2 FSM: event type: 2
+02:33:12 DLE_Exp2_Node2 Tx: message 47: {"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}
+02:33:12 DLE_Exp2_Node2 FSM: event type: 0
+02:33:12 DLE_Exp2_Node2 FSM: to send frame 46: {"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}
+02:33:13 PLE_Exp2_Node2 Tx: b'\x00.{"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}'
+02:33:13 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00.{"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}'
+02:33:13 DLE_Exp2_Node1 Rx: message 53: b'\x00.{"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}'
+02:33:13 DLE_Exp2_Node1 FSM: event type: 1
+02:33:13 DLE_Exp2_Node1 FSM: received frame 46: {"experiment_id": 2, "message_id": 46, "time": 1679722238041787964}
+02:33:14 PLE_Exp2_Node1 Tx: b'\x01.'
+02:33:14 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01.'
+02:33:14 DLE_Exp2_Node2 Rx: message 51: b'\x01.'
+02:33:14 DLE_Exp2_Node2 FSM: event type: 2
+02:33:14 DLE_Exp2_Node2 Tx: message 48: {"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}
+02:33:14 DLE_Exp2_Node2 FSM: event type: 0
+02:33:14 DLE_Exp2_Node2 FSM: to send frame 47: {"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}
+02:33:15 PLE_Exp2_Node2 Tx: b'\x00/{"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}'
+02:33:15 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00/{"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}'
+02:33:15 DLE_Exp2_Node1 Rx: message 54: b'\x00/{"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}'
+02:33:15 DLE_Exp2_Node1 FSM: event type: 1
+02:33:15 DLE_Exp2_Node1 FSM: received frame 47: {"experiment_id": 2, "message_id": 47, "time": 1679722238041790448}
+02:33:15 PLE_Exp2_Node1 Tx: b'\x01/'
+02:33:15 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01/'
+02:33:15 DLE_Exp2_Node2 Rx: message 52: b'\x01/'
+02:33:15 DLE_Exp2_Node2 FSM: event type: 2
+02:33:15 DLE_Exp2_Node2 Tx: message 49: {"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}
+02:33:15 DLE_Exp2_Node2 FSM: event type: 0
+02:33:15 DLE_Exp2_Node2 FSM: to send frame 48: {"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}
+02:33:16 PLE_Exp2_Node2 Tx: b'\x000{"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}'
+02:33:16 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x000{"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}'
+02:33:16 DLE_Exp2_Node1 Rx: message 55: b'\x000{"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}'
+02:33:16 DLE_Exp2_Node1 FSM: event type: 1
+02:33:16 DLE_Exp2_Node1 FSM: received frame 48: {"experiment_id": 2, "message_id": 48, "time": 1679722238041792937}
+02:33:18 PLE_Exp2_Node1 Tx: b'\x010'
+02:33:18 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x010'
+02:33:18 DLE_Exp2_Node2 Rx: message 53: b'\x010'
+02:33:18 DLE_Exp2_Node2 FSM: event type: 2
+02:33:18 DLE_Exp2_Node2 Tx: message 50: {"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}
+02:33:18 DLE_Exp2_Node2 FSM: event type: 0
+02:33:18 DLE_Exp2_Node2 FSM: to send frame 49: {"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}
+02:33:20 PLE_Exp2_Node2 Tx: b'\x001{"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}'
+02:33:20 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x001{"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}'
+02:33:20 DLE_Exp2_Node1 Rx: message 56: b'\x001{"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}'
+02:33:20 DLE_Exp2_Node1 FSM: event type: 1
+02:33:20 DLE_Exp2_Node1 FSM: received frame 49: {"experiment_id": 2, "message_id": 49, "time": 1679722238041795353}
+02:33:22 PLE_Exp2_Node1 Tx: b'\x011'
+02:33:22 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x011'
+02:33:22 DLE_Exp2_Node2 Rx: message 54: b'\x011'
+02:33:22 DLE_Exp2_Node2 FSM: event type: 2
+02:33:22 DLE_Exp2_Node2 Tx: message 51: {"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}
+02:33:22 DLE_Exp2_Node2 FSM: event type: 0
+02:33:22 DLE_Exp2_Node2 FSM: to send frame 50: {"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}
+02:33:22 PLE_Exp2_Node2 Tx: b'\x002{"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}'
+02:33:22 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x002{"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}'
+02:33:22 DLE_Exp2_Node1 Rx: message 57: b'\x002{"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}'
+02:33:22 DLE_Exp2_Node1 FSM: event type: 1
+02:33:22 DLE_Exp2_Node1 FSM: received frame 50: {"experiment_id": 2, "message_id": 50, "time": 1679722238041797853}
+02:33:23 PLE_Exp2_Node1 Tx: b'\x012'
+02:33:23 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x012'
+02:33:23 DLE_Exp2_Node2 Rx: message 55: b'\x012'
+02:33:23 DLE_Exp2_Node2 FSM: event type: 2
+02:33:23 DLE_Exp2_Node2 Tx: message 52: {"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}
+02:33:23 DLE_Exp2_Node2 FSM: event type: 0
+02:33:23 DLE_Exp2_Node2 FSM: to send frame 51: {"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}
+02:33:25 PLE_Exp2_Node2 Tx: b'\x003{"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}'
+02:33:25 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x003{"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}'
+02:33:25 DLE_Exp2_Node1 Rx: message 58: b'\x003{"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}'
+02:33:25 PLE_Exp2_Node2 Error: Packet Duplicated
+02:33:25 DLE_Exp2_Node1 FSM: event type: 1
+02:33:25 DLE_Exp2_Node1 FSM: received frame 51: {"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}
+02:33:25 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x003{"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}'
+02:33:25 DLE_Exp2_Node1 Rx: message 59: b'\x003{"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}'
+02:33:25 DLE_Exp2_Node1 FSM: event type: 1
+02:33:25 DLE_Exp2_Node1 FSM: received frame 51: {"experiment_id": 2, "message_id": 51, "time": 1679722238041800476}
+02:33:25 DLE_Exp2_Node1 FSM: received frame 51 but expected 52
+02:33:26 PLE_Exp2_Node1 Tx: b'\x013'
+02:33:26 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x013'
+02:33:26 DLE_Exp2_Node2 Rx: message 56: b'\x013'
+02:33:26 DLE_Exp2_Node2 FSM: event type: 2
+02:33:26 DLE_Exp2_Node2 Tx: message 53: {"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}
+02:33:26 DLE_Exp2_Node2 FSM: event type: 0
+02:33:26 DLE_Exp2_Node2 FSM: to send frame 52: {"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}
+02:33:27 PLE_Exp2_Node2 Tx: b'\x004{"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}'
+packet lost
+02:33:28 PLE_Exp2_Node1 Tx: b'\x013'
+packet lost
+02:33:32 DLE_Exp2_Node2 FSM: event type: 3
+02:33:32 DLE_Exp2_Node2 FSM: to resend frame 52: {"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}
+02:33:33 PLE_Exp2_Node2 Tx: b'\x004{"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}'
+02:33:33 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x004{"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}'
+02:33:33 DLE_Exp2_Node1 Rx: message 60: b'\x004{"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}'
+02:33:33 DLE_Exp2_Node1 FSM: event type: 1
+02:33:33 DLE_Exp2_Node1 FSM: received frame 52: {"experiment_id": 2, "message_id": 52, "time": 1679722238041803027}
+02:33:34 PLE_Exp2_Node1 Tx: b'\x014'
+02:33:34 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x014'
+02:33:34 DLE_Exp2_Node2 Rx: message 57: b'\x014'
+02:33:34 DLE_Exp2_Node2 FSM: event type: 2
+02:33:34 DLE_Exp2_Node2 Tx: message 54: {"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}
+02:33:34 DLE_Exp2_Node2 FSM: event type: 0
+02:33:34 DLE_Exp2_Node2 FSM: to send frame 53: {"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}
+02:33:34 PLE_Exp2_Node2 Tx: b'\x005{"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}'
+02:33:34 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x005{"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}'
+02:33:34 DLE_Exp2_Node1 Rx: message 61: b'\x005{"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}'
+02:33:34 DLE_Exp2_Node1 FSM: event type: 1
+02:33:34 DLE_Exp2_Node1 FSM: received frame 53: {"experiment_id": 2, "message_id": 53, "time": 1679722238041805718}
+02:33:36 PLE_Exp2_Node1 Tx: b'\x015'
+02:33:36 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x015'
+02:33:36 DLE_Exp2_Node2 Rx: message 58: b'\x015'
+02:33:36 DLE_Exp2_Node2 FSM: event type: 2
+02:33:36 DLE_Exp2_Node2 Tx: message 55: {"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}
+02:33:36 DLE_Exp2_Node2 FSM: event type: 0
+02:33:36 DLE_Exp2_Node2 FSM: to send frame 54: {"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}
+02:33:36 PLE_Exp2_Node2 Tx: b'\x006{"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}'
+02:33:36 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x006{"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}'
+02:33:36 DLE_Exp2_Node1 Rx: message 62: b'\x006{"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}'
+02:33:36 DLE_Exp2_Node1 FSM: event type: 1
+02:33:36 DLE_Exp2_Node1 FSM: received frame 54: {"experiment_id": 2, "message_id": 54, "time": 1679722238041808385}
+02:33:37 PLE_Exp2_Node1 Tx: b'\x016'
+02:33:37 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x016'
+02:33:37 DLE_Exp2_Node2 Rx: message 59: b'\x016'
+02:33:37 DLE_Exp2_Node2 FSM: event type: 2
+02:33:37 DLE_Exp2_Node2 Tx: message 56: {"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}
+02:33:37 DLE_Exp2_Node2 FSM: event type: 0
+02:33:37 DLE_Exp2_Node2 FSM: to send frame 55: {"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}
+02:33:39 PLE_Exp2_Node2 Tx: b'\x007{"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}'
+02:33:39 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x007{"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}'
+02:33:39 DLE_Exp2_Node1 Rx: message 63: b'\x007{"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}'
+02:33:39 DLE_Exp2_Node1 FSM: event type: 1
+02:33:39 DLE_Exp2_Node1 FSM: received frame 55: {"experiment_id": 2, "message_id": 55, "time": 1679722238041810943}
+02:33:39 PLE_Exp2_Node1 Tx: b'\x017'
+02:33:39 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x017'
+02:33:39 DLE_Exp2_Node2 Rx: message 60: b'\x017'
+02:33:39 DLE_Exp2_Node2 FSM: event type: 2
+02:33:39 DLE_Exp2_Node2 Tx: message 57: {"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}
+02:33:39 DLE_Exp2_Node2 FSM: event type: 0
+02:33:39 DLE_Exp2_Node2 FSM: to send frame 56: {"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}
+02:33:41 PLE_Exp2_Node2 Tx: b'\x008{"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}'
+packet lost
+02:33:45 DLE_Exp2_Node2 FSM: event type: 3
+02:33:45 DLE_Exp2_Node2 FSM: to resend frame 56: {"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}
+02:33:46 PLE_Exp2_Node2 Tx: b'\x008{"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}'
+02:33:46 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x008{"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}'
+02:33:46 DLE_Exp2_Node1 Rx: message 64: b'\x008{"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}'
+02:33:46 DLE_Exp2_Node1 FSM: event type: 1
+02:33:46 DLE_Exp2_Node1 FSM: received frame 56: {"experiment_id": 2, "message_id": 56, "time": 1679722238041813546}
+02:33:47 PLE_Exp2_Node1 Tx: b'\x018'
+02:33:47 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x018'
+02:33:47 DLE_Exp2_Node2 Rx: message 61: b'\x018'
+02:33:47 DLE_Exp2_Node2 FSM: event type: 2
+02:33:47 DLE_Exp2_Node2 Tx: message 58: {"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}
+02:33:47 DLE_Exp2_Node2 FSM: event type: 0
+02:33:47 DLE_Exp2_Node2 FSM: to send frame 57: {"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}
+02:33:49 PLE_Exp2_Node2 Tx: b'\x009{"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}'
+02:33:49 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x009{"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}'
+02:33:49 DLE_Exp2_Node1 Rx: message 65: b'\x009{"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}'
+02:33:49 DLE_Exp2_Node1 FSM: event type: 1
+02:33:49 DLE_Exp2_Node1 FSM: received frame 57: {"experiment_id": 2, "message_id": 57, "time": 1679722238041816027}
+02:33:50 PLE_Exp2_Node1 Tx: b'\x019'
+02:33:50 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x019'
+02:33:50 DLE_Exp2_Node2 Rx: message 62: b'\x019'
+02:33:50 DLE_Exp2_Node2 FSM: event type: 2
+02:33:50 DLE_Exp2_Node2 Tx: message 59: {"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}
+02:33:50 DLE_Exp2_Node2 FSM: event type: 0
+02:33:50 DLE_Exp2_Node2 FSM: to send frame 58: {"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}
+02:33:51 PLE_Exp2_Node2 Tx: b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:51 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:51 DLE_Exp2_Node1 Rx: message 66: b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:51 DLE_Exp2_Node1 FSM: event type: 1
+02:33:51 DLE_Exp2_Node1 FSM: received frame 58: {"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}
+02:33:51 PLE_Exp2_Node1 Tx: b'\x01:'
+packet lost
+02:33:56 DLE_Exp2_Node2 FSM: event type: 3
+02:33:56 DLE_Exp2_Node2 FSM: to resend frame 58: {"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}
+02:33:58 PLE_Exp2_Node2 Tx: b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:58 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:58 DLE_Exp2_Node1 Rx: message 67: b'\x00:{"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}'
+02:33:58 DLE_Exp2_Node1 FSM: event type: 1
+02:33:58 DLE_Exp2_Node1 FSM: received frame 58: {"experiment_id": 2, "message_id": 58, "time": 1679722238041818566}
+02:33:58 DLE_Exp2_Node1 FSM: received frame 58 but expected 59
+02:33:59 PLE_Exp2_Node1 Tx: b'\x01:'
+02:33:59 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01:'
+02:33:59 DLE_Exp2_Node2 Rx: message 63: b'\x01:'
+02:33:59 DLE_Exp2_Node2 FSM: event type: 2
+02:33:59 DLE_Exp2_Node2 Tx: message 60: {"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}
+02:33:59 DLE_Exp2_Node2 FSM: event type: 0
+02:33:59 DLE_Exp2_Node2 FSM: to send frame 59: {"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}
+02:33:59 PLE_Exp2_Node2 Tx: b'\x00;{"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}'
+02:33:59 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00;{"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}'
+02:33:59 DLE_Exp2_Node1 Rx: message 68: b'\x00;{"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}'
+02:33:59 DLE_Exp2_Node1 FSM: event type: 1
+02:33:59 DLE_Exp2_Node1 FSM: received frame 59: {"experiment_id": 2, "message_id": 59, "time": 1679722238041821108}
+02:34:00 PLE_Exp2_Node1 Tx: b'\x01;'
+02:34:00 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01;'
+02:34:00 DLE_Exp2_Node2 Rx: message 64: b'\x01;'
+02:34:00 DLE_Exp2_Node2 FSM: event type: 2
+02:34:00 DLE_Exp2_Node2 Tx: message 61: {"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}
+02:34:00 DLE_Exp2_Node2 FSM: event type: 0
+02:34:00 DLE_Exp2_Node2 FSM: to send frame 60: {"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}
+02:34:01 PLE_Exp2_Node2 Tx: b'\x00<{"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}'
+02:34:01 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00<{"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}'
+02:34:01 DLE_Exp2_Node1 Rx: message 69: b'\x00<{"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}'
+02:34:01 DLE_Exp2_Node1 FSM: event type: 1
+02:34:01 DLE_Exp2_Node1 FSM: received frame 60: {"experiment_id": 2, "message_id": 60, "time": 1679722238041823643}
+02:34:02 PLE_Exp2_Node1 Tx: b'\x01<'
+02:34:02 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01<'
+02:34:02 DLE_Exp2_Node2 Rx: message 65: b'\x01<'
+02:34:02 DLE_Exp2_Node2 FSM: event type: 2
+02:34:02 DLE_Exp2_Node2 Tx: message 62: {"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}
+02:34:02 DLE_Exp2_Node2 FSM: event type: 0
+02:34:02 DLE_Exp2_Node2 FSM: to send frame 61: {"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}
+02:34:02 PLE_Exp2_Node2 Tx: b'\x00={"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}'
+02:34:02 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00={"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}'
+02:34:02 DLE_Exp2_Node1 Rx: message 70: b'\x00={"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}'
+02:34:02 DLE_Exp2_Node1 FSM: event type: 1
+02:34:02 DLE_Exp2_Node1 FSM: received frame 61: {"experiment_id": 2, "message_id": 61, "time": 1679722238041826407}
+02:34:02 PLE_Exp2_Node1 Tx: b'\x01='
+02:34:02 PLE_Exp2_Node1 Error: Packet Duplicated
+02:34:02 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01='
+02:34:02 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01='
+02:34:02 DLE_Exp2_Node2 Rx: message 66: b'\x01='
+02:34:02 DLE_Exp2_Node2 Rx: message 67: b'\x01='
+02:34:02 DLE_Exp2_Node2 FSM: event type: 2
+02:34:02 DLE_Exp2_Node2 FSM: event type: 2
+02:34:02 DLE_Exp2_Node2 FSM: error! b'='
+02:34:02 DLE_Exp2_Node2 Tx: message 63: {"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}
+02:34:02 DLE_Exp2_Node2 FSM: event type: 0
+02:34:02 DLE_Exp2_Node2 FSM: to send frame 62: {"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}
+02:34:03 PLE_Exp2_Node2 Tx: b'\x00>{"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}'
+02:34:03 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00>{"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}'
+02:34:03 DLE_Exp2_Node1 Rx: message 71: b'\x00>{"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}'
+02:34:03 DLE_Exp2_Node1 FSM: event type: 1
+02:34:03 DLE_Exp2_Node1 FSM: received frame 62: {"experiment_id": 2, "message_id": 62, "time": 1679722238041829035}
+02:34:04 PLE_Exp2_Node1 Tx: b'\x01>'
+02:34:04 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01>'
+02:34:04 DLE_Exp2_Node2 Rx: message 68: b'\x01>'
+02:34:04 DLE_Exp2_Node2 FSM: event type: 2
+02:34:04 DLE_Exp2_Node2 Tx: message 64: {"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}
+02:34:04 DLE_Exp2_Node2 FSM: event type: 0
+02:34:04 DLE_Exp2_Node2 FSM: to send frame 63: {"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}
+02:34:06 PLE_Exp2_Node2 Tx: b'\x00?{"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}'
+02:34:06 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00?{"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}'
+02:34:06 DLE_Exp2_Node1 Rx: message 72: b'\x00?{"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}'
+02:34:06 DLE_Exp2_Node1 FSM: event type: 1
+02:34:06 DLE_Exp2_Node1 FSM: received frame 63: {"experiment_id": 2, "message_id": 63, "time": 1679722238041831562}
+02:34:06 PLE_Exp2_Node1 Tx: b'\x01?'
+02:34:06 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01?'
+02:34:06 DLE_Exp2_Node2 Rx: message 69: b'\x01?'
+02:34:06 DLE_Exp2_Node2 FSM: event type: 2
+02:34:06 DLE_Exp2_Node2 Tx: message 65: {"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}
+02:34:06 DLE_Exp2_Node2 FSM: event type: 0
+02:34:06 DLE_Exp2_Node2 FSM: to send frame 64: {"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}
+02:34:06 PLE_Exp2_Node2 Tx: b'\x00@{"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}'
+packet lost
+02:34:12 DLE_Exp2_Node2 FSM: event type: 3
+02:34:12 DLE_Exp2_Node2 FSM: to resend frame 64: {"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}
+02:34:13 PLE_Exp2_Node2 Tx: b'\x00@{"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}'
+02:34:13 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00@{"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}'
+02:34:13 DLE_Exp2_Node1 Rx: message 73: b'\x00@{"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}'
+02:34:13 DLE_Exp2_Node1 FSM: event type: 1
+02:34:13 DLE_Exp2_Node1 FSM: received frame 64: {"experiment_id": 2, "message_id": 64, "time": 1679722238041834137}
+02:34:14 PLE_Exp2_Node1 Tx: b'\x01@'
+02:34:14 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01@'
+02:34:14 DLE_Exp2_Node2 Rx: message 70: b'\x01@'
+02:34:14 DLE_Exp2_Node2 FSM: event type: 2
+02:34:14 DLE_Exp2_Node2 Tx: message 66: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:14 DLE_Exp2_Node2 FSM: event type: 0
+02:34:14 DLE_Exp2_Node2 FSM: to send frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:15 PLE_Exp2_Node2 Tx: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:15 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:15 DLE_Exp2_Node1 Rx: message 74: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:15 DLE_Exp2_Node1 FSM: event type: 1
+02:34:15 DLE_Exp2_Node1 FSM: received frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:16 PLE_Exp2_Node1 Tx: b'\x01A'
+packet lost
+02:34:20 DLE_Exp2_Node2 FSM: event type: 3
+02:34:20 DLE_Exp2_Node2 FSM: to resend frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:21 PLE_Exp2_Node2 Tx: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:21 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:21 DLE_Exp2_Node1 Rx: message 75: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:21 DLE_Exp2_Node1 FSM: event type: 1
+02:34:21 DLE_Exp2_Node1 FSM: received frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:21 DLE_Exp2_Node1 FSM: received frame 65 but expected 66
+02:34:21 PLE_Exp2_Node1 Tx: b'\x01A'
+packet lost
+02:34:25 DLE_Exp2_Node2 FSM: event type: 3
+02:34:25 DLE_Exp2_Node2 FSM: to resend frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:27 PLE_Exp2_Node2 Tx: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:27 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:27 DLE_Exp2_Node1 Rx: message 76: b'\x00A{"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}'
+02:34:27 DLE_Exp2_Node1 FSM: event type: 1
+02:34:27 DLE_Exp2_Node1 FSM: received frame 65: {"experiment_id": 2, "message_id": 65, "time": 1679722238041836643}
+02:34:27 DLE_Exp2_Node1 FSM: received frame 65 but expected 66
+02:34:28 PLE_Exp2_Node1 Tx: b'\x01A'
+02:34:28 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01A'
+02:34:28 DLE_Exp2_Node2 Rx: message 71: b'\x01A'
+02:34:28 DLE_Exp2_Node2 FSM: event type: 2
+02:34:28 DLE_Exp2_Node2 Tx: message 67: {"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}
+02:34:28 DLE_Exp2_Node2 FSM: event type: 0
+02:34:28 DLE_Exp2_Node2 FSM: to send frame 66: {"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}
+02:34:28 PLE_Exp2_Node2 Tx: b'\x00B{"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}'
+02:34:28 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00B{"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}'
+02:34:28 PLE_Exp2_Node2 Error: Packet Duplicated
+02:34:28 DLE_Exp2_Node1 Rx: message 77: b'\x00B{"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}'
+02:34:28 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00B{"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}'
+02:34:28 DLE_Exp2_Node1 Rx: message 78: b'\x00B{"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}'
+02:34:28 DLE_Exp2_Node1 FSM: event type: 1
+02:34:28 DLE_Exp2_Node1 FSM: received frame 66: {"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}
+02:34:28 DLE_Exp2_Node1 FSM: event type: 1
+02:34:28 DLE_Exp2_Node1 FSM: received frame 66: {"experiment_id": 2, "message_id": 66, "time": 1679722238041839326}
+02:34:28 DLE_Exp2_Node1 FSM: received frame 66 but expected 67
+02:34:29 PLE_Exp2_Node1 Tx: b'\x01B'
+02:34:29 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01B'
+02:34:29 DLE_Exp2_Node2 Rx: message 72: b'\x01B'
+02:34:29 DLE_Exp2_Node2 FSM: event type: 2
+02:34:29 DLE_Exp2_Node2 Tx: message 68: {"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}
+02:34:29 DLE_Exp2_Node2 FSM: event type: 0
+02:34:29 DLE_Exp2_Node2 FSM: to send frame 67: {"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}
+02:34:29 PLE_Exp2_Node2 Tx: b'\x00C{"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}'
+02:34:29 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00C{"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}'
+02:34:29 DLE_Exp2_Node1 Rx: message 79: b'\x00C{"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}'
+02:34:29 DLE_Exp2_Node1 FSM: event type: 1
+02:34:29 DLE_Exp2_Node1 FSM: received frame 67: {"experiment_id": 2, "message_id": 67, "time": 1679722238041841867}
+02:34:29 PLE_Exp2_Node1 Tx: b'\x01B'
+packet lost
+02:34:31 PLE_Exp2_Node1 Tx: b'\x01C'
+02:34:31 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01C'
+02:34:31 DLE_Exp2_Node2 Rx: message 73: b'\x01C'
+02:34:31 DLE_Exp2_Node2 FSM: event type: 2
+02:34:31 DLE_Exp2_Node2 Tx: message 69: {"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}
+02:34:31 DLE_Exp2_Node2 FSM: event type: 0
+02:34:31 DLE_Exp2_Node2 FSM: to send frame 68: {"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}
+02:34:32 PLE_Exp2_Node2 Tx: b'\x00D{"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}'
+02:34:32 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00D{"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}'
+02:34:32 DLE_Exp2_Node1 Rx: message 80: b'\x00D{"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}'
+02:34:32 DLE_Exp2_Node1 FSM: event type: 1
+02:34:32 DLE_Exp2_Node1 FSM: received frame 68: {"experiment_id": 2, "message_id": 68, "time": 1679722238041844415}
+02:34:33 PLE_Exp2_Node1 Tx: b'\x01D'
+02:34:33 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01D'
+02:34:33 DLE_Exp2_Node2 Rx: message 74: b'\x01D'
+02:34:33 DLE_Exp2_Node2 FSM: event type: 2
+02:34:33 DLE_Exp2_Node2 Tx: message 70: {"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}
+02:34:33 DLE_Exp2_Node2 FSM: event type: 0
+02:34:33 DLE_Exp2_Node2 FSM: to send frame 69: {"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}
+02:34:34 PLE_Exp2_Node2 Tx: b'\x00E{"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}'
+02:34:34 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00E{"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}'
+02:34:34 DLE_Exp2_Node1 Rx: message 81: b'\x00E{"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}'
+02:34:34 DLE_Exp2_Node1 FSM: event type: 1
+02:34:34 DLE_Exp2_Node1 FSM: received frame 69: {"experiment_id": 2, "message_id": 69, "time": 1679722238041846879}
+02:34:34 PLE_Exp2_Node1 Tx: b'\x01E'
+02:34:34 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01E'
+02:34:34 DLE_Exp2_Node2 Rx: message 75: b'\x01E'
+02:34:34 DLE_Exp2_Node2 FSM: event type: 2
+02:34:34 DLE_Exp2_Node2 Tx: message 71: {"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}
+02:34:34 DLE_Exp2_Node2 FSM: event type: 0
+02:34:34 DLE_Exp2_Node2 FSM: to send frame 70: {"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}
+02:34:34 PLE_Exp2_Node2 Tx: b'\x00F{"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}'
+packet lost
+02:34:40 DLE_Exp2_Node2 FSM: event type: 3
+02:34:40 DLE_Exp2_Node2 FSM: to resend frame 70: {"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}
+02:34:41 PLE_Exp2_Node2 Tx: b'\x00F{"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}'
+02:34:41 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00F{"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}'
+02:34:41 DLE_Exp2_Node1 Rx: message 82: b'\x00F{"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}'
+02:34:41 DLE_Exp2_Node1 FSM: event type: 1
+02:34:41 DLE_Exp2_Node1 FSM: received frame 70: {"experiment_id": 2, "message_id": 70, "time": 1679722238041849439}
+02:34:43 PLE_Exp2_Node1 Tx: b'\x01F'
+02:34:43 PLE_Exp2_Node1 Error: Packet Duplicated
+02:34:43 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01F'
+02:34:43 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01F'
+02:34:43 DLE_Exp2_Node2 Rx: message 76: b'\x01F'
+02:34:43 DLE_Exp2_Node2 Rx: message 77: b'\x01F'
+02:34:43 DLE_Exp2_Node2 FSM: event type: 2
+02:34:43 DLE_Exp2_Node2 FSM: event type: 2
+02:34:43 DLE_Exp2_Node2 FSM: error! b'F'
+02:34:43 DLE_Exp2_Node2 Tx: message 72: {"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}
+02:34:43 DLE_Exp2_Node2 FSM: event type: 0
+02:34:43 DLE_Exp2_Node2 FSM: to send frame 71: {"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}
+02:34:44 PLE_Exp2_Node2 Tx: b'\x00G{"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}'
+02:34:44 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00G{"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}'
+02:34:44 DLE_Exp2_Node1 Rx: message 83: b'\x00G{"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}'
+02:34:44 DLE_Exp2_Node1 FSM: event type: 1
+02:34:44 DLE_Exp2_Node1 FSM: received frame 71: {"experiment_id": 2, "message_id": 71, "time": 1679722238041852092}
+02:34:45 PLE_Exp2_Node1 Tx: b'\x01G'
+02:34:45 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01G'
+02:34:45 DLE_Exp2_Node2 Rx: message 78: b'\x01G'
+02:34:45 DLE_Exp2_Node2 FSM: event type: 2
+02:34:45 DLE_Exp2_Node2 Tx: message 73: {"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}
+02:34:45 DLE_Exp2_Node2 FSM: event type: 0
+02:34:45 DLE_Exp2_Node2 FSM: to send frame 72: {"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}
+02:34:45 PLE_Exp2_Node2 Tx: b'\x00H{"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}'
+02:34:45 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00H{"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}'
+02:34:45 DLE_Exp2_Node1 Rx: message 84: b'\x00H{"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}'
+02:34:45 DLE_Exp2_Node1 FSM: event type: 1
+02:34:45 DLE_Exp2_Node1 FSM: received frame 72: {"experiment_id": 2, "message_id": 72, "time": 1679722238041854601}
+02:34:46 PLE_Exp2_Node1 Tx: b'\x01H'
+02:34:46 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01H'
+02:34:46 DLE_Exp2_Node2 Rx: message 79: b'\x01H'
+02:34:46 DLE_Exp2_Node2 FSM: event type: 2
+02:34:46 DLE_Exp2_Node2 Tx: message 74: {"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}
+02:34:46 DLE_Exp2_Node2 FSM: event type: 0
+02:34:46 DLE_Exp2_Node2 FSM: to send frame 73: {"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}
+02:34:48 PLE_Exp2_Node2 Tx: b'\x00I{"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}'
+02:34:48 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00I{"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}'
+02:34:48 DLE_Exp2_Node1 Rx: message 85: b'\x00I{"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}'
+02:34:48 DLE_Exp2_Node1 FSM: event type: 1
+02:34:48 DLE_Exp2_Node1 FSM: received frame 73: {"experiment_id": 2, "message_id": 73, "time": 1679722238041857143}
+02:34:49 PLE_Exp2_Node1 Tx: b'\x01I'
+02:34:49 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01I'
+02:34:49 DLE_Exp2_Node2 Rx: message 80: b'\x01I'
+02:34:49 DLE_Exp2_Node2 FSM: event type: 2
+02:34:49 DLE_Exp2_Node2 Tx: message 75: {"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}
+02:34:49 DLE_Exp2_Node2 FSM: event type: 0
+02:34:49 DLE_Exp2_Node2 FSM: to send frame 74: {"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}
+02:34:50 PLE_Exp2_Node2 Tx: b'\x00J{"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}'
+02:34:50 PLE_Exp2_Node2 Error: Packet Duplicated
+02:34:50 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00J{"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}'
+02:34:50 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00J{"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}'
+02:34:50 DLE_Exp2_Node1 Rx: message 86: b'\x00J{"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}'
+02:34:50 DLE_Exp2_Node1 Rx: message 87: b'\x00J{"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}'
+02:34:50 DLE_Exp2_Node1 FSM: event type: 1
+02:34:50 DLE_Exp2_Node1 FSM: received frame 74: {"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}
+02:34:50 DLE_Exp2_Node1 FSM: event type: 1
+02:34:50 DLE_Exp2_Node1 FSM: received frame 74: {"experiment_id": 2, "message_id": 74, "time": 1679722238041859649}
+02:34:50 DLE_Exp2_Node1 FSM: received frame 74 but expected 75
+02:34:51 PLE_Exp2_Node1 Tx: b'\x01J'
+02:34:51 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01J'
+02:34:51 DLE_Exp2_Node2 Rx: message 81: b'\x01J'
+02:34:51 DLE_Exp2_Node2 FSM: event type: 2
+02:34:51 DLE_Exp2_Node2 Tx: message 76: {"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}
+02:34:51 DLE_Exp2_Node2 FSM: event type: 0
+02:34:51 DLE_Exp2_Node2 FSM: to send frame 75: {"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}
+02:34:51 PLE_Exp2_Node2 Tx: b'\x00K{"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}'
+02:34:51 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00K{"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}'
+02:34:51 DLE_Exp2_Node1 Rx: message 88: b'\x00K{"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}'
+02:34:51 DLE_Exp2_Node1 FSM: event type: 1
+02:34:51 DLE_Exp2_Node1 FSM: received frame 75: {"experiment_id": 2, "message_id": 75, "time": 1679722238041862305}
+02:34:52 PLE_Exp2_Node1 Tx: b'\x01J'
+02:34:52 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01J'
+02:34:52 DLE_Exp2_Node2 Rx: message 82: b'\x01J'
+02:34:52 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 74 does not match local seq # 75
+02:34:54 PLE_Exp2_Node1 Tx: b'\x01K'
+02:34:54 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01K'
+02:34:54 DLE_Exp2_Node2 Rx: message 83: b'\x01K'
+02:34:54 DLE_Exp2_Node2 FSM: event type: 2
+02:34:54 DLE_Exp2_Node2 Tx: message 77: {"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}
+02:34:54 DLE_Exp2_Node2 FSM: event type: 0
+02:34:54 DLE_Exp2_Node2 FSM: to send frame 76: {"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}
+02:34:54 PLE_Exp2_Node1 Error: Packet Duplicated
+02:34:54 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01K'
+02:34:54 DLE_Exp2_Node2 Rx: message 84: b'\x01K'
+02:34:54 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 75 does not match local seq # 76
+02:34:56 PLE_Exp2_Node2 Tx: b'\x00L{"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}'
+packet lost
+02:34:59 DLE_Exp2_Node2 FSM: event type: 3
+02:34:59 DLE_Exp2_Node2 FSM: to resend frame 76: {"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}
+02:35:01 PLE_Exp2_Node2 Tx: b'\x00L{"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}'
+02:35:01 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00L{"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}'
+02:35:01 DLE_Exp2_Node1 Rx: message 89: b'\x00L{"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}'
+02:35:01 DLE_Exp2_Node1 FSM: event type: 1
+02:35:01 DLE_Exp2_Node1 FSM: received frame 76: {"experiment_id": 2, "message_id": 76, "time": 1679722238041865339}
+02:35:03 PLE_Exp2_Node1 Tx: b'\x01L'
+02:35:03 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01L'
+02:35:03 DLE_Exp2_Node2 Rx: message 85: b'\x01L'
+02:35:03 DLE_Exp2_Node2 FSM: event type: 2
+02:35:03 DLE_Exp2_Node2 Tx: message 78: {"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}
+02:35:03 DLE_Exp2_Node2 FSM: event type: 0
+02:35:03 DLE_Exp2_Node2 FSM: to send frame 77: {"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}
+02:35:04 PLE_Exp2_Node2 Tx: b'\x00M{"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}'
+02:35:04 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00M{"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}'
+02:35:04 DLE_Exp2_Node1 Rx: message 90: b'\x00M{"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}'
+02:35:04 DLE_Exp2_Node1 FSM: event type: 1
+02:35:04 DLE_Exp2_Node1 FSM: received frame 77: {"experiment_id": 2, "message_id": 77, "time": 1679722238041867897}
+02:35:04 PLE_Exp2_Node1 Tx: b'\x01M'
+02:35:04 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01M'
+02:35:04 DLE_Exp2_Node2 Rx: message 86: b'\x01M'
+02:35:04 DLE_Exp2_Node2 FSM: event type: 2
+02:35:04 DLE_Exp2_Node2 Tx: message 79: {"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}
+02:35:04 DLE_Exp2_Node2 FSM: event type: 0
+02:35:04 DLE_Exp2_Node2 FSM: to send frame 78: {"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}
+02:35:06 PLE_Exp2_Node2 Tx: b'\x00N{"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}'
+02:35:06 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00N{"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}'
+02:35:06 DLE_Exp2_Node1 Rx: message 91: b'\x00N{"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}'
+02:35:06 DLE_Exp2_Node1 FSM: event type: 1
+02:35:06 DLE_Exp2_Node1 FSM: received frame 78: {"experiment_id": 2, "message_id": 78, "time": 1679722238041870886}
+02:35:08 PLE_Exp2_Node1 Tx: b'\x01N'
+02:35:08 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01N'
+02:35:08 DLE_Exp2_Node2 Rx: message 87: b'\x01N'
+02:35:08 DLE_Exp2_Node2 FSM: event type: 2
+02:35:08 DLE_Exp2_Node2 Tx: message 80: {"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}
+02:35:08 DLE_Exp2_Node2 FSM: event type: 0
+02:35:08 DLE_Exp2_Node2 FSM: to send frame 79: {"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}
+02:35:08 PLE_Exp2_Node2 Tx: b'\x00O{"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}'
+packet lost
+02:35:14 DLE_Exp2_Node2 FSM: event type: 3
+02:35:14 DLE_Exp2_Node2 FSM: to resend frame 79: {"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}
+02:35:15 PLE_Exp2_Node2 Tx: b'\x00O{"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}'
+02:35:15 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00O{"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}'
+02:35:15 DLE_Exp2_Node1 Rx: message 92: b'\x00O{"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}'
+02:35:15 DLE_Exp2_Node1 FSM: event type: 1
+02:35:15 DLE_Exp2_Node1 FSM: received frame 79: {"experiment_id": 2, "message_id": 79, "time": 1679722238041873536}
+02:35:16 PLE_Exp2_Node1 Tx: b'\x01O'
+02:35:16 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01O'
+02:35:16 DLE_Exp2_Node2 Rx: message 88: b'\x01O'
+02:35:16 DLE_Exp2_Node2 FSM: event type: 2
+02:35:16 DLE_Exp2_Node2 Tx: message 81: {"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}
+02:35:16 DLE_Exp2_Node2 FSM: event type: 0
+02:35:16 DLE_Exp2_Node2 FSM: to send frame 80: {"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}
+02:35:17 PLE_Exp2_Node2 Tx: b'\x00P{"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}'
+02:35:17 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00P{"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}'
+02:35:17 DLE_Exp2_Node1 Rx: message 93: b'\x00P{"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}'
+02:35:17 DLE_Exp2_Node1 FSM: event type: 1
+02:35:17 DLE_Exp2_Node1 FSM: received frame 80: {"experiment_id": 2, "message_id": 80, "time": 1679722238041876318}
+02:35:18 PLE_Exp2_Node1 Tx: b'\x01P'
+02:35:18 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01P'
+02:35:18 DLE_Exp2_Node2 Rx: message 89: b'\x01P'
+02:35:18 DLE_Exp2_Node2 FSM: event type: 2
+02:35:18 DLE_Exp2_Node2 Tx: message 82: {"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}
+02:35:18 DLE_Exp2_Node2 FSM: event type: 0
+02:35:18 DLE_Exp2_Node2 FSM: to send frame 81: {"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}
+02:35:19 PLE_Exp2_Node2 Tx: b'\x00Q{"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}'
+02:35:19 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00Q{"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}'
+02:35:19 DLE_Exp2_Node1 Rx: message 94: b'\x00Q{"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}'
+02:35:19 DLE_Exp2_Node1 FSM: event type: 1
+02:35:19 DLE_Exp2_Node1 FSM: received frame 81: {"experiment_id": 2, "message_id": 81, "time": 1679722238041878921}
+02:35:21 PLE_Exp2_Node1 Tx: b'\x01Q'
+02:35:21 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01Q'
+02:35:21 DLE_Exp2_Node2 Rx: message 90: b'\x01Q'
+02:35:21 DLE_Exp2_Node2 FSM: event type: 2
+02:35:21 DLE_Exp2_Node2 Tx: message 83: {"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}
+02:35:21 DLE_Exp2_Node2 FSM: event type: 0
+02:35:21 DLE_Exp2_Node2 FSM: to send frame 82: {"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}
+02:35:21 PLE_Exp2_Node2 Tx: b'\x00R{"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}'
+02:35:21 PLE_Exp2_Node2 Error: Packet Duplicated
+02:35:21 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00R{"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}'
+02:35:21 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00R{"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}'
+02:35:21 DLE_Exp2_Node1 Rx: message 95: b'\x00R{"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}'
+02:35:21 DLE_Exp2_Node1 Rx: message 96: b'\x00R{"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}'
+02:35:21 DLE_Exp2_Node1 FSM: event type: 1
+02:35:21 DLE_Exp2_Node1 FSM: received frame 82: {"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}
+02:35:21 DLE_Exp2_Node1 FSM: event type: 1
+02:35:21 DLE_Exp2_Node1 FSM: received frame 82: {"experiment_id": 2, "message_id": 82, "time": 1679722238041881447}
+02:35:21 DLE_Exp2_Node1 FSM: received frame 82 but expected 83
+02:35:22 PLE_Exp2_Node1 Tx: b'\x01R'
+02:35:22 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01R'
+02:35:22 DLE_Exp2_Node2 Rx: message 91: b'\x01R'
+02:35:22 DLE_Exp2_Node2 FSM: event type: 2
+02:35:22 DLE_Exp2_Node2 Tx: message 84: {"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}
+02:35:22 DLE_Exp2_Node2 FSM: event type: 0
+02:35:22 DLE_Exp2_Node2 FSM: to send frame 83: {"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}
+02:35:22 PLE_Exp2_Node1 Tx: b'\x01R'
+02:35:22 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01R'
+02:35:22 DLE_Exp2_Node2 Rx: message 92: b'\x01R'
+02:35:22 DLE_Exp2_Node2 FSM: event type: 2
+ACK # 82 does not match local seq # 83
+02:35:22 PLE_Exp2_Node2 Tx: b'\x00S{"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}'
+02:35:22 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00S{"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}'
+02:35:22 DLE_Exp2_Node1 Rx: message 97: b'\x00S{"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}'
+02:35:22 DLE_Exp2_Node1 FSM: event type: 1
+02:35:22 DLE_Exp2_Node1 FSM: received frame 83: {"experiment_id": 2, "message_id": 83, "time": 1679722238041884009}
+02:35:22 PLE_Exp2_Node1 Tx: b'\x01S'
+02:35:22 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01S'
+02:35:22 DLE_Exp2_Node2 Rx: message 93: b'\x01S'
+02:35:22 DLE_Exp2_Node2 FSM: event type: 2
+02:35:22 DLE_Exp2_Node2 Tx: message 85: {"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}
+02:35:22 DLE_Exp2_Node2 FSM: event type: 0
+02:35:22 DLE_Exp2_Node2 FSM: to send frame 84: {"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}
+02:35:24 PLE_Exp2_Node2 Tx: b'\x00T{"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}'
+packet lost
+02:35:28 DLE_Exp2_Node2 FSM: event type: 3
+02:35:28 DLE_Exp2_Node2 FSM: to resend frame 84: {"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}
+02:35:30 PLE_Exp2_Node2 Tx: b'\x00T{"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}'
+02:35:30 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00T{"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}'
+02:35:30 DLE_Exp2_Node1 Rx: message 98: b'\x00T{"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}'
+02:35:30 DLE_Exp2_Node1 FSM: event type: 1
+02:35:30 DLE_Exp2_Node1 FSM: received frame 84: {"experiment_id": 2, "message_id": 84, "time": 1679722238041886569}
+02:35:30 PLE_Exp2_Node1 Tx: b'\x01T'
+02:35:30 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01T'
+02:35:30 DLE_Exp2_Node2 Rx: message 94: b'\x01T'
+02:35:30 DLE_Exp2_Node2 FSM: event type: 2
+02:35:30 DLE_Exp2_Node2 Tx: message 86: {"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}
+02:35:30 DLE_Exp2_Node2 FSM: event type: 0
+02:35:30 DLE_Exp2_Node2 FSM: to send frame 85: {"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}
+02:35:31 PLE_Exp2_Node2 Tx: b'\x00U{"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}'
+02:35:31 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00U{"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}'
+02:35:31 DLE_Exp2_Node1 Rx: message 99: b'\x00U{"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}'
+02:35:31 DLE_Exp2_Node1 FSM: event type: 1
+02:35:31 DLE_Exp2_Node1 FSM: received frame 85: {"experiment_id": 2, "message_id": 85, "time": 1679722238041889420}
+02:35:32 PLE_Exp2_Node1 Tx: b'\x01U'
+02:35:32 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01U'
+02:35:32 DLE_Exp2_Node2 Rx: message 95: b'\x01U'
+02:35:32 DLE_Exp2_Node2 FSM: event type: 2
+02:35:32 DLE_Exp2_Node2 Tx: message 87: {"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}
+02:35:32 DLE_Exp2_Node2 FSM: event type: 0
+02:35:32 DLE_Exp2_Node2 FSM: to send frame 86: {"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}
+02:35:32 PLE_Exp2_Node2 Tx: b'\x00V{"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}'
+02:35:32 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00V{"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}'
+02:35:32 DLE_Exp2_Node1 Rx: message 100: b'\x00V{"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}'
+02:35:32 DLE_Exp2_Node1 FSM: event type: 1
+02:35:32 DLE_Exp2_Node1 FSM: received frame 86: {"experiment_id": 2, "message_id": 86, "time": 1679722238041892029}
+02:35:33 PLE_Exp2_Node1 Tx: b'\x01V'
+02:35:33 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01V'
+02:35:33 DLE_Exp2_Node2 Rx: message 96: b'\x01V'
+02:35:33 DLE_Exp2_Node2 FSM: event type: 2
+02:35:33 DLE_Exp2_Node2 Tx: message 88: {"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}
+02:35:33 DLE_Exp2_Node2 FSM: event type: 0
+02:35:33 DLE_Exp2_Node2 FSM: to send frame 87: {"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}
+02:35:34 PLE_Exp2_Node2 Tx: b'\x00W{"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}'
+02:35:34 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00W{"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}'
+02:35:34 DLE_Exp2_Node1 Rx: message 101: b'\x00W{"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}'
+02:35:34 DLE_Exp2_Node1 FSM: event type: 1
+02:35:34 DLE_Exp2_Node1 FSM: received frame 87: {"experiment_id": 2, "message_id": 87, "time": 1679722238041894502}
+02:35:35 PLE_Exp2_Node1 Tx: b'\x01W'
+02:35:35 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01W'
+02:35:35 DLE_Exp2_Node2 Rx: message 97: b'\x01W'
+02:35:35 DLE_Exp2_Node2 FSM: event type: 2
+02:35:35 DLE_Exp2_Node2 Tx: message 89: {"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}
+02:35:35 DLE_Exp2_Node2 FSM: event type: 0
+02:35:35 DLE_Exp2_Node2 FSM: to send frame 88: {"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}
+02:35:36 PLE_Exp2_Node2 Tx: b'\x00X{"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}'
+02:35:36 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00X{"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}'
+02:35:36 DLE_Exp2_Node1 Rx: message 102: b'\x00X{"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}'
+02:35:36 DLE_Exp2_Node1 FSM: event type: 1
+02:35:36 DLE_Exp2_Node1 FSM: received frame 88: {"experiment_id": 2, "message_id": 88, "time": 1679722238041897098}
+02:35:36 PLE_Exp2_Node1 Tx: b'\x01X'
+02:35:36 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01X'
+02:35:36 DLE_Exp2_Node2 Rx: message 98: b'\x01X'
+02:35:36 DLE_Exp2_Node2 FSM: event type: 2
+02:35:36 DLE_Exp2_Node2 Tx: message 90: {"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}
+02:35:36 DLE_Exp2_Node2 FSM: event type: 0
+02:35:36 DLE_Exp2_Node2 FSM: to send frame 89: {"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}
+02:35:37 PLE_Exp2_Node2 Tx: b'\x00Y{"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}'
+packet lost
+02:35:42 DLE_Exp2_Node2 FSM: event type: 3
+02:35:42 DLE_Exp2_Node2 FSM: to resend frame 89: {"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}
+02:35:44 PLE_Exp2_Node2 Tx: b'\x00Y{"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}'
+packet lost
+02:35:48 DLE_Exp2_Node2 FSM: event type: 3
+02:35:48 DLE_Exp2_Node2 FSM: to resend frame 89: {"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}
+02:35:49 PLE_Exp2_Node2 Tx: b'\x00Y{"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}'
+02:35:49 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00Y{"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}'
+02:35:49 DLE_Exp2_Node1 Rx: message 103: b'\x00Y{"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}'
+02:35:49 DLE_Exp2_Node1 FSM: event type: 1
+02:35:49 DLE_Exp2_Node1 FSM: received frame 89: {"experiment_id": 2, "message_id": 89, "time": 1679722238041899705}
+02:35:51 PLE_Exp2_Node1 Tx: b'\x01Y'
+02:35:51 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01Y'
+02:35:51 DLE_Exp2_Node2 Rx: message 99: b'\x01Y'
+02:35:51 DLE_Exp2_Node2 FSM: event type: 2
+02:35:51 DLE_Exp2_Node2 Tx: message 91: {"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}
+02:35:51 DLE_Exp2_Node2 FSM: event type: 0
+02:35:51 DLE_Exp2_Node2 FSM: to send frame 90: {"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}
+02:35:51 PLE_Exp2_Node2 Tx: b'\x00Z{"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}'
+02:35:51 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00Z{"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}'
+02:35:51 DLE_Exp2_Node1 Rx: message 104: b'\x00Z{"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}'
+02:35:51 DLE_Exp2_Node1 FSM: event type: 1
+02:35:51 DLE_Exp2_Node1 FSM: received frame 90: {"experiment_id": 2, "message_id": 90, "time": 1679722238041902291}
+02:35:52 PLE_Exp2_Node1 Tx: b'\x01Z'
+02:35:52 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01Z'
+02:35:52 DLE_Exp2_Node2 Rx: message 100: b'\x01Z'
+02:35:52 DLE_Exp2_Node2 FSM: event type: 2
+02:35:52 DLE_Exp2_Node2 Tx: message 92: {"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}
+02:35:52 DLE_Exp2_Node2 FSM: event type: 0
+02:35:52 DLE_Exp2_Node2 FSM: to send frame 91: {"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}
+02:35:52 PLE_Exp2_Node2 Tx: b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:52 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:52 DLE_Exp2_Node1 Rx: message 105: b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:52 DLE_Exp2_Node1 FSM: event type: 1
+02:35:52 DLE_Exp2_Node1 FSM: received frame 91: {"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}
+02:35:53 PLE_Exp2_Node1 Tx: b'\x01['
+packet lost
+02:35:58 DLE_Exp2_Node2 FSM: event type: 3
+02:35:58 DLE_Exp2_Node2 FSM: to resend frame 91: {"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}
+02:35:59 PLE_Exp2_Node2 Tx: b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:59 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:59 DLE_Exp2_Node1 Rx: message 106: b'\x00[{"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}'
+02:35:59 DLE_Exp2_Node1 FSM: event type: 1
+02:35:59 DLE_Exp2_Node1 FSM: received frame 91: {"experiment_id": 2, "message_id": 91, "time": 1679722238041904724}
+02:35:59 DLE_Exp2_Node1 FSM: received frame 91 but expected 92
+02:35:59 PLE_Exp2_Node1 Tx: b'\x01['
+02:35:59 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01['
+02:35:59 DLE_Exp2_Node2 Rx: message 101: b'\x01['
+02:35:59 DLE_Exp2_Node2 FSM: event type: 2
+02:35:59 DLE_Exp2_Node2 Tx: message 93: {"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}
+02:35:59 DLE_Exp2_Node2 FSM: event type: 0
+02:35:59 DLE_Exp2_Node2 FSM: to send frame 92: {"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}
+02:36:00 PLE_Exp2_Node2 Tx: b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:00 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:00 DLE_Exp2_Node1 Rx: message 107: b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:00 DLE_Exp2_Node1 FSM: event type: 1
+02:36:00 DLE_Exp2_Node1 FSM: received frame 92: {"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}
+02:36:02 PLE_Exp2_Node1 Tx: b'\x01\\'
+packet lost
+02:36:05 DLE_Exp2_Node2 FSM: event type: 3
+02:36:05 DLE_Exp2_Node2 FSM: to resend frame 92: {"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}
+02:36:06 PLE_Exp2_Node2 Tx: b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:06 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:06 DLE_Exp2_Node1 Rx: message 108: b'\x00\\{"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}'
+02:36:06 DLE_Exp2_Node1 FSM: event type: 1
+02:36:06 DLE_Exp2_Node1 FSM: received frame 92: {"experiment_id": 2, "message_id": 92, "time": 1679722238041907177}
+02:36:06 DLE_Exp2_Node1 FSM: received frame 92 but expected 93
+02:36:07 PLE_Exp2_Node1 Tx: b'\x01\\'
+02:36:07 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01\\'
+02:36:07 DLE_Exp2_Node2 Rx: message 102: b'\x01\\'
+02:36:07 DLE_Exp2_Node2 FSM: event type: 2
+02:36:07 DLE_Exp2_Node2 Tx: message 94: {"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}
+02:36:07 DLE_Exp2_Node2 FSM: event type: 0
+02:36:07 DLE_Exp2_Node2 FSM: to send frame 93: {"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}
+02:36:07 PLE_Exp2_Node2 Tx: b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:07 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:07 DLE_Exp2_Node1 Rx: message 109: b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:07 DLE_Exp2_Node1 FSM: event type: 1
+02:36:07 DLE_Exp2_Node1 FSM: received frame 93: {"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}
+02:36:09 PLE_Exp2_Node1 Tx: b'\x01]'
+packet lost
+02:36:13 DLE_Exp2_Node2 FSM: event type: 3
+02:36:13 DLE_Exp2_Node2 FSM: to resend frame 93: {"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}
+02:36:13 PLE_Exp2_Node2 Tx: b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:13 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:13 DLE_Exp2_Node1 Rx: message 110: b'\x00]{"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}'
+02:36:13 DLE_Exp2_Node1 FSM: event type: 1
+02:36:13 DLE_Exp2_Node1 FSM: received frame 93: {"experiment_id": 2, "message_id": 93, "time": 1679722238041909613}
+02:36:13 DLE_Exp2_Node1 FSM: received frame 93 but expected 94
+02:36:14 PLE_Exp2_Node1 Tx: b'\x01]'
+02:36:14 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01]'
+02:36:14 DLE_Exp2_Node2 Rx: message 103: b'\x01]'
+02:36:14 DLE_Exp2_Node2 FSM: event type: 2
+02:36:14 DLE_Exp2_Node2 Tx: message 95: {"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}
+02:36:14 DLE_Exp2_Node2 FSM: event type: 0
+02:36:14 DLE_Exp2_Node2 FSM: to send frame 94: {"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}
+02:36:15 PLE_Exp2_Node2 Tx: b'\x00^{"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}'
+02:36:15 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00^{"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}'
+02:36:15 DLE_Exp2_Node1 Rx: message 111: b'\x00^{"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}'
+02:36:15 DLE_Exp2_Node1 FSM: event type: 1
+02:36:15 DLE_Exp2_Node1 FSM: received frame 94: {"experiment_id": 2, "message_id": 94, "time": 1679722238041912114}
+02:36:16 PLE_Exp2_Node1 Tx: b'\x01^'
+02:36:16 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01^'
+02:36:16 DLE_Exp2_Node2 Rx: message 104: b'\x01^'
+02:36:16 DLE_Exp2_Node2 FSM: event type: 2
+02:36:16 DLE_Exp2_Node2 Tx: message 96: {"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}
+02:36:16 DLE_Exp2_Node2 FSM: event type: 0
+02:36:16 DLE_Exp2_Node2 FSM: to send frame 95: {"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}
+02:36:17 PLE_Exp2_Node2 Tx: b'\x00_{"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}'
+02:36:17 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00_{"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}'
+02:36:17 DLE_Exp2_Node1 Rx: message 112: b'\x00_{"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}'
+02:36:17 DLE_Exp2_Node1 FSM: event type: 1
+02:36:17 DLE_Exp2_Node1 FSM: received frame 95: {"experiment_id": 2, "message_id": 95, "time": 1679722238041914606}
+02:36:18 PLE_Exp2_Node1 Tx: b'\x01_'
+02:36:18 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01_'
+02:36:18 DLE_Exp2_Node2 Rx: message 105: b'\x01_'
+02:36:18 DLE_Exp2_Node2 FSM: event type: 2
+02:36:18 DLE_Exp2_Node2 Tx: message 97: {"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}
+02:36:18 DLE_Exp2_Node2 FSM: event type: 0
+02:36:18 DLE_Exp2_Node2 FSM: to send frame 96: {"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}
+02:36:19 PLE_Exp2_Node2 Tx: b'\x00`{"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}'
+02:36:19 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00`{"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}'
+02:36:19 DLE_Exp2_Node1 Rx: message 113: b'\x00`{"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}'
+02:36:19 DLE_Exp2_Node1 FSM: event type: 1
+02:36:19 DLE_Exp2_Node1 FSM: received frame 96: {"experiment_id": 2, "message_id": 96, "time": 1679722238041917196}
+02:36:21 PLE_Exp2_Node1 Tx: b'\x01`'
+02:36:21 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01`'
+02:36:21 DLE_Exp2_Node2 Rx: message 106: b'\x01`'
+02:36:21 DLE_Exp2_Node2 FSM: event type: 2
+02:36:21 DLE_Exp2_Node2 Tx: message 98: {"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}
+02:36:21 DLE_Exp2_Node2 FSM: event type: 0
+02:36:21 DLE_Exp2_Node2 FSM: to send frame 97: {"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}
+02:36:21 PLE_Exp2_Node2 Tx: b'\x00a{"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}'
+02:36:21 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00a{"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}'
+02:36:21 DLE_Exp2_Node1 Rx: message 114: b'\x00a{"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}'
+02:36:21 DLE_Exp2_Node1 FSM: event type: 1
+02:36:21 DLE_Exp2_Node1 FSM: received frame 97: {"experiment_id": 2, "message_id": 97, "time": 1679722238041919793}
+02:36:21 PLE_Exp2_Node1 Tx: b'\x01a'
+02:36:21 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01a'
+02:36:21 DLE_Exp2_Node2 Rx: message 107: b'\x01a'
+02:36:21 DLE_Exp2_Node2 FSM: event type: 2
+02:36:21 DLE_Exp2_Node2 Tx: message 99: {"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}
+02:36:21 DLE_Exp2_Node2 FSM: event type: 0
+02:36:21 DLE_Exp2_Node2 FSM: to send frame 98: {"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}
+02:36:22 PLE_Exp2_Node2 Tx: b'\x00b{"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}'
+02:36:22 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00b{"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}'
+02:36:22 DLE_Exp2_Node1 Rx: message 115: b'\x00b{"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}'
+02:36:22 DLE_Exp2_Node1 FSM: event type: 1
+02:36:22 DLE_Exp2_Node1 FSM: received frame 98: {"experiment_id": 2, "message_id": 98, "time": 1679722238041922414}
+02:36:23 PLE_Exp2_Node1 Tx: b'\x01b'
+02:36:23 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01b'
+02:36:23 DLE_Exp2_Node2 Rx: message 108: b'\x01b'
+02:36:23 DLE_Exp2_Node2 FSM: event type: 2
+02:36:23 DLE_Exp2_Node2 Tx: message 100: {"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}
+02:36:23 DLE_Exp2_Node2 FSM: event type: 0
+02:36:23 DLE_Exp2_Node2 FSM: to send frame 99: {"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}
+02:36:24 PLE_Exp2_Node2 Tx: b'\x00c{"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}'
+02:36:24 PLE_Exp2_Node1 Rx from ('127.0.0.1', 63333): b'\x00c{"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}'
+02:36:24 DLE_Exp2_Node1 Rx: message 116: b'\x00c{"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}'
+02:36:24 DLE_Exp2_Node1 FSM: event type: 1
+02:36:24 DLE_Exp2_Node1 FSM: received frame 99: {"experiment_id": 2, "message_id": 99, "time": 1679722238041924973}
+02:36:24 PLE_Exp2_Node1 Tx: b'\x01c'
+02:36:24 PLE_Exp2_Node2 Rx from ('127.0.0.1', 62222): b'\x01c'
+02:36:24 DLE_Exp2_Node2 Rx: message 109: b'\x01c'
+02:36:24 DLE_Exp2_Node2 FSM: event type: 2
